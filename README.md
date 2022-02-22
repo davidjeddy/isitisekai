@@ -34,6 +34,7 @@ This project will tell you is an anime is of the isekai genre or not.
     - [Configure](#configure)
     - [Run](#run)
     - [Stop](#stop)
+  - [Common Errors and Fixes](#common-errors-and-fixes)
   - [Versioning](#versioning)
   - [Contributors](#contributors)
   - [Additional Information](#additional-information)
@@ -54,9 +55,11 @@ Please see [DEVDOCS.md](./DEVDOCS.md).
 
 ## Requirements
 
-- POSIX terminal
-- git
+- POSIX terminal and a shell
+- Git
 - AWS API credentials (~/.aws/config)
+- A terraform backend
+  - The default Terraform Cloud is configured via ./terraform/terragrunt.hcl
 
 ## How to
 
@@ -73,6 +76,7 @@ git clone git@github.com:davidjeddy/isitisekai.com.git
 cp ./terraform/prd/terraform.tfvars.dist ./terraform/prd/terraform.tfvars
 # populate with appropriate values
 vi ./terraform/prd/terraform.tfvars
+terraform login
 ```
 
 ### Run
@@ -84,11 +88,21 @@ terragrunt plan
 terragrunt apply
 ```
 
+When Terraform has completed, now it is time to upload the website assets.
+
+```sh
+./lib/sync_assets.sh
+```
+
 ### Stop
 
 ```sh
 terragrunt destroy
 ```
+
+## Common Errors and Fixes
+
+[Common Errors and Fixes](./COMMON_ERRORS_AND_FIXES.md)
 
 ## Versioning
 
