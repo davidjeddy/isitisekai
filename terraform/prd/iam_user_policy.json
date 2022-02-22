@@ -1,0 +1,27 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "s3:*",
+                "s3-object-lambda:*"
+            ],
+            "Resource": "arn:aws:s3:::${var.hostname}"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "route53:ListHostedZones",
+                "route53:ListTagsForResource",
+                "route53:GetHostedZone",
+                "route53:ChangeResourceRecordSets",
+                "route53:GetChange",
+                "route53:ListResourceRecordSets"
+            ],
+            "Resource": [
+                "arn:aws:route53:::hostedzone/${var.parent_zone_id}"
+            ]
+        }
+    ]
+}

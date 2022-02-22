@@ -31,8 +31,9 @@ This project will tell you is an anime is of the isekai genre or not.
   - [Requirements](#requirements)
   - [How to](#how-to)
     - [Pre-Flight](#pre-flight)
+    - [Configure](#configure)
     - [Run](#run)
-    - [Stop](#stop)
+    - [Stop / Destroy](#stop--destroy)
   - [Common Errors and Fixes](#common-errors-and-fixes)
   - [Versioning](#versioning)
   - [Contributors](#contributors)
@@ -70,7 +71,13 @@ Enable remote state storage using Terraform Cloud
 terraform login
 ```
 
-AWS user with the following permission policy as well as the access key id and secret access key
+Create the an IAM user and attach the following IAM permissions to it
+
+```sh
+./terraform/prd/iam_user_policy.json
+```
+
+Create the AWS API key and secret, keep them on-screen. Execute `configure` on localhost
 
 ```sh
 aws configure
@@ -88,6 +95,14 @@ Clone the project from remote Git repository
 git clone git@github.com:davidjeddy/isitisekai.com.git
 ```
 
+### Configure
+
+```sh
+cp ./terraform/prd/terraform.tfenv.dist ./terraform/prd/terraform.tfenv
+vi ./terraform/prd/terraform.tfenv
+# add appropriate values
+```
+
 ### Run
 
 ```sh
@@ -95,18 +110,15 @@ cd ./terraform/prd
 terragrunt init
 terragrunt plan
 terragrunt apply
+# `yes` [ENTER] when prompted
 ```
 
-When Terraform has completed, now it is time to upload the website assets.
+### Stop / Destroy
 
 ```sh
-./lib/sync_assets.sh
-```
-
-### Stop
-
-```sh
+cd ./terraform/prd
 terragrunt destroy
+# `yes` [ENTER] when prompted
 ```
 
 ## Common Errors and Fixes

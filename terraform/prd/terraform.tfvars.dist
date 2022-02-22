@@ -1,0 +1,6 @@
+hostname = ""
+name = ""
+namespace = ""
+parent_zone_id = ""
+region = "us-east-1"
+stage = "prd"

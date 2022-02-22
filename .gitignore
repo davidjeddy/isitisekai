@@ -1,5 +1,6 @@
 .tmp
 .terraform
 .terragrunt-cache
+terraform.tfvars
 
 !**/.keep
