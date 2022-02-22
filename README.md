@@ -31,7 +31,6 @@ This project will tell you is an anime is of the isekai genre or not.
   - [Requirements](#requirements)
   - [How to](#how-to)
     - [Pre-Flight](#pre-flight)
-    - [Configure](#configure)
     - [Run](#run)
     - [Stop](#stop)
   - [Common Errors and Fixes](#common-errors-and-fixes)
@@ -57,7 +56,7 @@ Please see [DEVDOCS.md](./DEVDOCS.md).
 
 - POSIX terminal and a shell
 - Git
-- AWS API credentials (~/.aws/config)
+- AWS CLI and access to / ability to create API credentials
 - A terraform backend
   - The default Terraform Cloud is configured via ./terraform/terragrunt.hcl
 
@@ -65,24 +64,34 @@ Please see [DEVDOCS.md](./DEVDOCS.md).
 
 ### Pre-Flight
 
+Enable remote state storage using Terraform Cloud
+
+```sh
+terraform login
+```
+
+AWS user with the following permission policy as well as the access key id and secret access key
+
+```sh
+aws configure
+# access key id
+# access key secret
+# default region
+# output format
+# edit ~/.aws/configure and change the profile name to `isitisekai`
+```
+
+Clone the project from remote Git repository
+
 ```sh
 # clone project
 git clone git@github.com:davidjeddy/isitisekai.com.git
 ```
 
-### Configure
-
-```sh
-cp ./terraform/prd/terraform.tfvars.dist ./terraform/prd/terraform.tfvars
-# populate with appropriate values
-vi ./terraform/prd/terraform.tfvars
-terraform login
-```
-
 ### Run
 
 ```sh
-cd <project root>/terraform/prod
+cd ./terraform/prd
 terragrunt init
 terragrunt plan
 terragrunt apply
