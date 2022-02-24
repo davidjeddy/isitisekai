@@ -4,24 +4,35 @@
         {
             "Effect": "Allow",
             "Action": [
-                "s3:*",
-                "s3-object-lambda:*"
+                "acm:DeleteCertificate",
+                "acm:DescribeCertificate",
+                "acm:ListTagsForCertificate",
+                "acm:RequestCertificate"
             ],
-            "Resource": "arn:aws:s3:::${var.hostname}"
+            "Resource": "arn:aws:acm:us-east-1:530589290119:certificate/*"
         },
         {
             "Effect": "Allow",
             "Action": [
-                "route53:ListHostedZones",
-                "route53:ListTagsForResource",
-                "route53:GetHostedZone",
+                "cloudfront:CreateCloudFrontOriginAccessIdentity",
+                "cloudfront:CreateDistribution",
+                "cloudfront:DeleteCloudFrontOriginAccessIdentity",
+                "cloudfront:DeleteDistribution",
+                "cloudfront:GetCloudFrontOriginAccessIdentity",
+                "cloudfront:GetDistribution",
+                "cloudfront:ListTagsForResource",
+                "cloudfront:TagResource",
+                "cloudfront:UpdateDistribution",
                 "route53:ChangeResourceRecordSets",
                 "route53:GetChange",
-                "route53:ListResourceRecordSets"
+                "route53:GetHostedZone",
+                "route53:ListHostedZones",
+                "route53:ListResourceRecordSets",
+                "route53:ListTagsForResource",
+                "s3-object-lambda:*",
+                "s3:*"
             ],
-            "Resource": [
-                "arn:aws:route53:::hostedzone/${var.parent_zone_id}"
-            ]
+            "Resource": "*"
         }
     ]
 }

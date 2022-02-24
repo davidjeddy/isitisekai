@@ -1,6 +1,7 @@
 variable region {
   description = "Default region the AWS provider should execute against."
   type        = string
+  default = "us-east-1"
 }
 
 variable parent_zone_id {
@@ -10,6 +11,11 @@ variable parent_zone_id {
 
 variable hostname {
   type = string
+}
+
+variable logs_expiration_days {
+  type = number
+  default = 3650
 }
 
 variable name {
@@ -22,4 +28,5 @@ variable namespace {
 
 variable stage {
   type = string
+  default = "prd"
 }
