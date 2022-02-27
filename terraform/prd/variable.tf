@@ -30,3 +30,8 @@ variable stage {
   type = string
   default = "prd"
 }
+
+variable web_path {
+  type = string
+  default = "../../web_app"
+}

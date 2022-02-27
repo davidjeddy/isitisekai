@@ -59,7 +59,11 @@ Please see [DEVDOCS.md](./DEVDOCS.md).
 - Git
 - AWS CLI and access to / ability to create API credentials
 - A terraform backend
-  - The default Terraform Cloud is configured via ./terraform/terragrunt.hcl
+  - Terraform Cloud
+    - configured via ./terraform/terragrunt.hcl
+  - tfsec
+  - Terraform >=1.1.6
+  - Terragrunt >=0.36
 
 ## How to
 

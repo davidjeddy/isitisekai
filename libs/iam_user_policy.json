@@ -4,12 +4,13 @@
         {
             "Effect": "Allow",
             "Action": [
+                "acm:AddTagsToCertificate",
                 "acm:DeleteCertificate",
                 "acm:DescribeCertificate",
                 "acm:ListTagsForCertificate",
                 "acm:RequestCertificate"
             ],
-            "Resource": "arn:aws:acm:us-east-1:530589290119:certificate/*"
+            "Resource": "arn:aws:acm:us-east-1:${var.account_id}:certificate/*"
         },
         {
             "Effect": "Allow",

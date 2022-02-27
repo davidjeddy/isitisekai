@@ -1,28 +1,16 @@
 # ROADMAP
 
-Documentation or Link to resources that contain the production planning with future release and changes accessible.
+## 0.2.0
 
-- GitHub Issues
-- [GitLab Project Roadmap](https://docs.gitlab.com/ee/user/group/roadmap/)
-- [..or other popular Product Roadmap resources](https://www.actitime.com/project-management/roadmap-software/)
+- X Load test
+- X Cost estimation per 1M views
+- X Architectural Diagram
 
-## Unite all contributor efforts ✅
+## 0.1.0
 
-- [x] Create central org, and move across all-contributors, all-contributors-cli, all-contributors-atom and all-contributors-bot
-- [x] Add Branding, central Communication Places
-- [x] Launch website and centralize documentation
-
-## Establish an All Contributors community
-
-- [ ] Establish a check-in ritual
-- [ ] Establish a culture of gratitude ritual 
-- [ ] Develop more proactive information-sharing practices
-- [ ] To keep engaged: sending regular (weekly) updates about the recent events related to the project 
-- [ ] Develop more open and inclusive decision-making processes
-
-## Building an All Contributors presence and visibilty
-
-- [x] Switch to .io from .com and promote
-- [ ] Create a video
-- [ ] Improve SEO
-- [ ] Add all contributors to email distro.
+- ✅ Register domain
+- ✅ Create code project
+- ✅ Create S3 bucket to store static assets
+- ✅ Create placeholder static assets
+- ✅ Create CloudFront CDN to front the bucket
+- ✅ Create TLS cert and assigned to domain to enable HTTPS
