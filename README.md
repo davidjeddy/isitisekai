@@ -105,8 +105,7 @@ terragrunt apply
 ### Test
 
 ```sh
-k6 run ./test/k6/http_get.js
-k6 run ./test/k6/https_get.js
+k6 run -e HOSTNAME=isitisekai.com ./test/k6/get.js
 ```
 
 ### Stop / Destroy
