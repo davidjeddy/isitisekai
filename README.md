@@ -33,6 +33,7 @@ This project will tell you is an anime is of the isekai genre or not.
     - [Pre-Flight](#pre-flight)
     - [Configure](#configure)
     - [Run](#run)
+    - [Test](#test)
     - [Stop / Destroy](#stop--destroy)
   - [Common Errors and Fixes](#common-errors-and-fixes)
   - [Versioning](#versioning)
@@ -55,15 +56,16 @@ Please see [DEVDOCS.md](./DEVDOCS.md).
 
 ## Requirements
 
-- POSIX terminal and a shell
-- Git
-- AWS CLI and access to / ability to create API credentials
-- A terraform backend
-  - Terraform Cloud
-    - configured via ./terraform/terragrunt.hcl
-  - tfsec
-  - Terraform >=1.1.6
-  - Terragrunt >=0.36
+- [POSIX terminal](https://en.wikipedia.org/wiki/POSIX_terminal_interface) and a shell
+- [Git](https://git-scm.com/)
+- [AWS CLI](https://aws.amazon.com/cli/)
+  - [IAM user API id and key](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html)
+  - [IAM user with permissions](./libs/iam_user_policy.json)
+- [Terraform Cloud](https://cloud.hashicorp.com/products/terraform)
+- [Terraform](https://www.terraform.io/) >=1.1.6
+- [Terragrunt](https://terragrunt.gruntwork.io/) >=0.36
+- [tfsec](https://github.com/aquasecurity/tfsec)
+- [k6 open source](https://k6.io/open-source/)
 
 ## How to
 
@@ -73,23 +75,6 @@ Enable remote state storage using Terraform Cloud
 
 ```sh
 terraform login
-```
-
-Create the an IAM user and attach the following IAM permissions to it
-
-```sh
-./terraform/prd/iam_user_policy.json
-```
-
-Create the AWS API key and secret, keep them on-screen. Execute `configure` on localhost
-
-```sh
-aws configure
-# access key id
-# access key secret
-# default region
-# output format
-# edit ~/.aws/configure and change the profile name to `isitisekai`
 ```
 
 Clone the project from remote Git repository
@@ -115,6 +100,13 @@ terragrunt init
 terragrunt plan
 terragrunt apply
 # `yes` [ENTER] when prompted
+```
+
+### Test
+
+```sh
+k6 run ./test/k6/http_get.js
+k6 run ./test/k6/https_get.js
 ```
 
 ### Stop / Destroy
