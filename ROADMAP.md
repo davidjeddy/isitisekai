@@ -1,10 +1,19 @@
 # ROADMAP
 
+## 0.4.0
+
+- X Google Adwords
+
+## 0.3.0
+
+- X Loading spinner until the first background is loaded
+- X Cost estimation per 1M views
+
 ## 0.2.0
 
-- X Load test
-- X Cost estimation per 1M views
-- X Architectural Diagram
+- ✅ Load test
+- ✅ Infrastructure Architectural Diagram
+- ✅ Google Analytics
 
 ## 0.1.0
 

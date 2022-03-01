@@ -41,6 +41,7 @@ This project will tell you is an anime is of the isekai genre or not.
   - [References and Sources](#references-and-sources)
     - [CSS](#css)
     - [Terraform](#terraform)
+    - [Javascript](#javascript)
   - [Contributors](#contributors)
   - [Additional Information](#additional-information)
 
@@ -123,6 +124,13 @@ terragrunt apply
 
 Also, after updating resources stored in S3 you must trigger a CloudFront Distribution invalidation to get the changes to display at the URL.
 
+Now re-generate the [Terraform Graphviz diagram](./infra_diagram.dot).
+
+```sh
+cd ./terraform/prd
+terragrunt graph > ../../infra_diagram.dot
+```
+
 ### Stop / Destroy
 
 ```sh
@@ -154,8 +162,6 @@ Additional labels for pre-release and build metadata are available as extensions
 ### CSS
 
 - <https://www.freecodecamp.org/news/how-to-center-anything-with-css-align-a-div-text-and-more/>
-- <https://caniuse.com/?search=vh>
-- <https://animejs.com/>
 - <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random>
 - <https://www.imgonline.com.ua/eng/make-jpeg-progressive-without-compression.php>
 - <https://www.w3schools.com/cssref/pr_background-position.asp>
@@ -163,6 +169,12 @@ Additional labels for pre-release and build metadata are available as extensions
 ### Terraform
 
 - <https://stackoverflow.com/questions/57456167/uploading-multiple-files-in-aws-s3-from-terraform>
+
+### Javascript
+
+- <https://stackoverflow.com/questions/3646036/preloading-images-with-javascript>
+- <https://caniuse.com/?search=vh>
+- <https://animejs.com/>
 
 ## Contributors
 
