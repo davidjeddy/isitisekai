@@ -13,13 +13,43 @@ resource aws_s3_bucket_object index_html {
   tags   = local.tags
 }
 
-resource aws_s3_bucket_object header_jpg {
-  cache_control          = "max-age=604800"
+resource aws_s3_bucket_object images_jpg {
+  for_each = fileset("${var.web_path}/images/", "*.jpg")
+
   content_type           = "image/jpg"
-  etag                   = filemd5("${var.web_path}/images/header.jpg")
-  key                    = "images/header.jpg"
   server_side_encryption = "AES256"
-  source                 = "${var.web_path}/images/header.jpg"
+
+  etag   = filemd5("${var.web_path}/images/${each.value}")
+  source = "${var.web_path}/images/${each.value}"
+  key    = "images/${each.value}"
+
+  bucket = module.cdn.s3_bucket
+  tags   = local.tags
+}
+
+resource aws_s3_bucket_object styles_css {
+  for_each = fileset("${var.web_path}/styles/", "*.css")
+
+  content_type           = "text/css"
+  server_side_encryption = "AES256"
+
+  etag   = filemd5("${var.web_path}/styles/${each.value}")
+  source = "${var.web_path}/styles/${each.value}"
+  key    = "styles/${each.value}"
+
+  bucket = module.cdn.s3_bucket
+  tags   = local.tags
+}
+
+resource aws_s3_bucket_object javascripts {
+  for_each = fileset("${var.web_path}/javascripts/", "*.js")
+
+  content_type           = "text/javascript"
+  server_side_encryption = "AES256"
+
+  etag   = filemd5("${var.web_path}/javascripts/${each.value}")
+  source = "${var.web_path}/javascripts/${each.value}"
+  key    = "javascripts/${each.value}"
 
   bucket = module.cdn.s3_bucket
   tags   = local.tags
