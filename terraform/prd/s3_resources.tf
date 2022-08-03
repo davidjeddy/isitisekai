@@ -1,6 +1,6 @@
 # asset uploaded via Terraform
 
-resource aws_s3_bucket_object index_html {
+resource "aws_s3_bucket_object" "index_html" {
   cache_control          = "max-age=604800"
   content_encoding       = "utf-8"
   content_type           = "text/html; charset=UTF-8"
@@ -13,7 +13,7 @@ resource aws_s3_bucket_object index_html {
   tags   = local.tags
 }
 
-resource aws_s3_bucket_object images_jpg {
+resource "aws_s3_bucket_object" "images_jpg" {
   for_each = fileset("${var.web_path}/images/", "*.jpg")
 
   content_type           = "image/jpg"
@@ -27,7 +27,7 @@ resource aws_s3_bucket_object images_jpg {
   tags   = local.tags
 }
 
-resource aws_s3_bucket_object styles_css {
+resource "aws_s3_bucket_object" "styles_css" {
   for_each = fileset("${var.web_path}/styles/", "*.css")
 
   content_type           = "text/css"
@@ -41,7 +41,7 @@ resource aws_s3_bucket_object styles_css {
   tags   = local.tags
 }
 
-resource aws_s3_bucket_object javascripts {
+resource "aws_s3_bucket_object" "javascripts" {
   for_each = fileset("${var.web_path}/javascripts/", "*.js")
 
   content_type           = "text/javascript"
@@ -55,7 +55,7 @@ resource aws_s3_bucket_object javascripts {
   tags   = local.tags
 }
 
-resource aws_s3_bucket_object favicon_ico {
+resource "aws_s3_bucket_object" "favicon_ico" {
   cache_control          = "max-age=604800"
   content_type           = "image/x-icon"
   etag                   = filemd5("${var.web_path}/favicon.ico")

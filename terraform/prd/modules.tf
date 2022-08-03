@@ -1,19 +1,8 @@
-# locals
+# Static hosting via S3 bucket fronted by a CDN via CloudFront
 
-locals {
-  tags = {
-    "hostname"  = var.hostname
-    "name"      = var.name
-    "namespace" = var.namespace
-    "stage"     = var.stage
-  }
-}
-
-# static hosting via S3 bucket fronted by a CDN via CloudFront
-
-module cdn {
+module "cdn" {
   source  = "cloudposse/cloudfront-s3-cdn/aws"
-  version = "0.82.3"
+  version = "0.82.4"
 
   acm_certificate_arn = module.acm_request_certificate.arn
   name                = var.name
@@ -21,18 +10,23 @@ module cdn {
   parent_zone_id      = var.parent_zone_id
   stage               = var.stage
 
-  aliases           = [
+  aliases = [
     var.hostname,
     "www.${var.hostname}"
   ]
 
-  dns_alias_enabled = true
-  s3_access_log_bucket_name = "dje-prd-isitisekai-logs"
+  geo_restriction_locations = [""]
+
+  cloudfront_access_logging_enabled = "dje-prd-isitisekai-logs"
+  dns_alias_enabled                 = true
+  encryption_enabled                = true
+  geo_restriction_type              = "blacklist"
+  s3_access_log_bucket_name         = "dje-prd-isitisekai-logs"
 }
 
 # TLS via ACM
 
-module acm_request_certificate {
+module "acm_request_certificate" {
   source  = "cloudposse/acm-request-certificate/aws"
   version = "0.16.0"
 

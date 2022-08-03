@@ -1,23 +1,33 @@
 terraform {
-  before_hook "before_hook" {
+  # https://runterrascan.io/
+  before_hook "terraform" {
+    commands     = ["apply", "init", "plan"]
+    execute      = ["terraform", "fmt", "-recursive", "." ]
+  }
+
+  # https://runterrascan.io/
+  after_hook "terrascan" {
     commands     = ["apply", "plan"]
-    execute = [
-      "tfsec",
-      ".",
-      "--tfvars-file", "terraform.tfvars",
-      "--exclude-downloaded-modules"
-    ]
+    execute      = ["terrascan", "scan", "--iac-type", "terraform", "--non-recursive", "--config-path", "terrascan_config.toml" ]
+  }
+
+  # https://github.com/aquasecurity/tfsec
+  after_hook "tfsec" {
+    commands     = ["apply", "plan"]
+    execute      = ["tfsec", ".", "--tfvars-file", "terraform.tfvars", "--exclude-downloaded-modules", "--concise-output"]
+  }
+
+  # https://github.com/infracost/infracost
+  after_hook "infracost" {
+    commands     = ["apply", "plan"]
+    execute      = ["infracost", "diff", "--compare-to", "infracost-base.json", "--path", ".", "--project-name", "isitisekai"]
   }
 
   extra_arguments "custom_vars" {
-
-    arguments = [
-      "-var-file=./terraform.tfvars"
-    ]
-
     commands = [
       "apply",
       "import",
+      "init",
       "plan",
       "push",
       "refresh",
