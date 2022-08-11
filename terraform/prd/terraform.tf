@@ -1,6 +1,6 @@
 terraform {
   backend "remote" {
-    organization = "davidjeddy"
+    organization = "eddy_enterprises"
 
     workspaces {
       name = "isitisekaicom"
@@ -16,7 +16,7 @@ terraform {
 }
 
 provider "aws" {
-  profile                 = "isitisekai"
-  region                  = "us-east-1"
-  shared_credentials_file = "$HOME/.aws/credentials"
+  region     = var.region
+  access_key = var.access_key
+  secret_key = var.secret_key
 }

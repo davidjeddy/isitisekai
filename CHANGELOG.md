@@ -2,7 +2,7 @@
 
 ## [0.3.0] - 2022-08-11
 
-- Migrate project ownership to Eddy Enterprises
+- Updated project to current tooling and patterns
 
 ## [0.2.0]
 

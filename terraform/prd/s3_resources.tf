@@ -1,10 +1,10 @@
-# asset uploaded via Terraform
+# Assets uploaded via Terraform to S3
 
 resource "aws_s3_bucket_object" "index_html" {
   cache_control          = "max-age=604800"
   content_encoding       = "utf-8"
   content_type           = "text/html; charset=UTF-8"
-  etag                   = filemd5("${var.web_path}/index.html")
+  etag                   = md5("../../web_app/index.html")
   key                    = "index.html"
   server_side_encryption = "AES256"
   source                 = "${var.web_path}/index.html"
@@ -58,7 +58,7 @@ resource "aws_s3_bucket_object" "javascripts" {
 resource "aws_s3_bucket_object" "favicon_ico" {
   cache_control          = "max-age=604800"
   content_type           = "image/x-icon"
-  etag                   = filemd5("${var.web_path}/favicon.ico")
+  etag                   = "../../web_app/favicon.ico"
   key                    = "favicon.ico"
   server_side_encryption = "AES256"
   source                 = "${var.web_path}/favicon.ico"

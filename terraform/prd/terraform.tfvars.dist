@@ -1,4 +1,2 @@
-hostname = ""
-name = ""
-namespace = ""
-parent_zone_id = ""
+access_key = ""
+secret_key = ""
