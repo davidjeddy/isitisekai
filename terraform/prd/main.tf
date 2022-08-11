@@ -1,28 +1,32 @@
 provider "aws" {
-  region = "us-east-1" # CloudFront expects ACM resources in us-east-1 region only
+  profile                 = var.name
+  region                  = var.region
+  shared_credentials_file = "$HOME/.aws/credentials"
 
   # Make it faster by skipping something
-  skip_get_ec2_platforms      = true
-  skip_metadata_api_check     = true
-  skip_region_validation      = true
-  skip_credentials_validation = true
+  # skip_credentials_validation = true
+  # skip_get_ec2_platforms      = true
+  # skip_metadata_api_check     = true
+  # skip_region_validation      = true
+  # skip_requesting_account_id  = false # skip_requesting_account_id should be disabled to generate valid ARN in apigatewayv2_api_execution_arn
 
-  # skip_requesting_account_id should be disabled to generate valid ARN in apigatewayv2_api_execution_arn
-  skip_requesting_account_id = false
+  default_tags {
+    tags = var.tags
+  }
 }
 
 locals {
-  domain_name = "terraform-aws-modules.modules.tf" # trimsuffix(data.aws_route53_zone.this.name, ".")
-  subdomain   = "cdn"
+  domain_name = join(".", [var.name, "com"])
+  subdomain   = "www"
 }
 
 module "cloudfront" {
-  source  = "terraform-module/cloudfront/aws"
-  version = "~> 1.0"
+  source  = "terraform-aws-modules/cloudfront/aws"
+  version = "~> 2.0"
 
   aliases = ["${local.subdomain}.${local.domain_name}"]
 
-  comment             = "My awesome CloudFront"
+  comment             = var.name
   enabled             = true
   is_ipv6_enabled     = true
   price_class         = "PriceClass_All"
@@ -175,7 +179,7 @@ module "s3_one" {
   source  = "terraform-aws-modules/s3-bucket/aws"
   version = "~> 2.0"
 
-  bucket        = "s3-one-${random_pet.this.id}"
+  bucket        = "s3-one-${random_string.this.id}"
   force_destroy = true
 }
 
@@ -183,7 +187,7 @@ module "log_bucket" {
   source  = "terraform-aws-modules/s3-bucket/aws"
   version = "~> 2.0"
 
-  bucket = "logs-${random_pet.this.id}"
+  bucket = "logs-${random_string.this.id}"
   acl    = null
   grant = [{
     type       = "CanonicalUser"
@@ -222,7 +226,7 @@ module "lambda_function" {
   source  = "terraform-aws-modules/lambda/aws"
   version = "~> 2.0"
 
-  function_name = "${random_pet.this.id}-lambda"
+  function_name = "${random_string.this.id}-lambda"
   description   = "My awesome lambda function"
   handler       = "index.lambda_handler"
   runtime       = "python3.8"
@@ -268,6 +272,7 @@ module "records" {
 ###########################
 # Origin Access Identities
 ###########################
+
 data "aws_iam_policy_document" "s3_policy" {
   statement {
     actions   = ["s3:GetObject"]
@@ -289,12 +294,14 @@ resource "aws_s3_bucket_policy" "bucket_policy" {
 # Extra
 ########
 
-resource "random_pet" "this" {
-  length = 2
+resource "random_string" "this" {
+  length  = 4
+  special = false
+  upper   = false
 }
 
 resource "aws_cloudfront_function" "example" {
-  name    = "example-${random_pet.this.id}"
+  name    = "example-${random_string.this.id}"
   runtime = "cloudfront-js-1.0"
   code    = file("example-function.js")
 }

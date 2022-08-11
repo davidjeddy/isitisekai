@@ -31,17 +31,12 @@ This project will tell you is an anime is of the isekai genre or not.
   - [Requirements](#requirements)
   - [How to](#how-to)
     - [Pre-Flight](#pre-flight)
-    - [Configure](#configure)
     - [Run](#run)
     - [Test](#test)
     - [Update](#update)
     - [Stop / Destroy](#stop--destroy)
   - [Common Errors and Fixes](#common-errors-and-fixes)
   - [Versioning](#versioning)
-  - [References and Sources](#references-and-sources)
-    - [CSS](#css)
-    - [Terraform](#terraform)
-    - [Javascript](#javascript)
   - [Contributors](#contributors)
   - [Additional Information](#additional-information)
 
@@ -76,25 +71,21 @@ Please see [DEVDOCS.md](./DEVDOCS.md).
 
 ### Pre-Flight
 
-Enable remote state storage using Terraform Cloud
+```sh
+git clone git@github.com:davidjeddy/eddy_enterprises.git
+cd terraform/[DEV||INT||PRD||ETC]
+cp terraform.tfvars.dist terraform.tfvars
+```
+
+Edit *.tfvars, populate with appropriate values.
+
+Initialize IaC management tools.
 
 ```sh
+infracost auth login
+infracost breakdown --path . --format json --out-file infracost-base.json
 terraform login
-```
-
-Clone the project from remote Git repository
-
-```sh
-# clone project
-git clone git@github.com:davidjeddy/isitisekai.com.git
-```
-
-### Configure
-
-```sh
-cp ./terraform/prd/terraform.tfenv.dist ./terraform/prd/terraform.tfenv
-vi ./terraform/prd/terraform.tfenv
-# add appropriate values
+tflint --init
 ```
 
 ### Run
@@ -156,25 +147,6 @@ Given a version number MAJOR.MINOR.PATCH, increment the:
 
 Additional labels for pre-release and build metadata are available as extensions to the MAJOR.MINOR.PATCH format.
 ```
-
-## References and Sources
-
-### CSS
-
-- <https://www.freecodecamp.org/news/how-to-center-anything-with-css-align-a-div-text-and-more/>
-- <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random>
-- <https://www.imgonline.com.ua/eng/make-jpeg-progressive-without-compression.php>
-- <https://www.w3schools.com/cssref/pr_background-position.asp>
-
-### Terraform
-
-- <https://stackoverflow.com/questions/57456167/uploading-multiple-files-in-aws-s3-from-terraform>
-
-### Javascript
-
-- <https://stackoverflow.com/questions/3646036/preloading-images-with-javascript>
-- <https://caniuse.com/?search=vh>
-- <https://animejs.com/>
 
 ## Contributors
 

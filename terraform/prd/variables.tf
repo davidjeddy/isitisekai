@@ -20,7 +20,7 @@ variable "name" {
 
 variable "region" {
   default     = "us-east-1"
-  description = "Home AWS region"
+  description = "Home AWS region, additionally CloudFront expects ACM resources in us-east-1 region only"
   type        = string
 }
 
