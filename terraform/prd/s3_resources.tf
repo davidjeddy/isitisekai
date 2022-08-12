@@ -4,13 +4,12 @@ resource "aws_s3_bucket_object" "index_html" {
   cache_control          = "max-age=604800"
   content_encoding       = "utf-8"
   content_type           = "text/html; charset=UTF-8"
-  etag                   = md5("../../web_app/index.html")
+  etag                   = filemd5("${var.web_path}/index.html")
   key                    = "index.html"
   server_side_encryption = "AES256"
   source                 = "${var.web_path}/index.html"
 
   bucket = module.cdn.s3_bucket
-  tags   = local.tags
 }
 
 resource "aws_s3_bucket_object" "images_jpg" {
@@ -24,7 +23,6 @@ resource "aws_s3_bucket_object" "images_jpg" {
   key    = "images/${each.value}"
 
   bucket = module.cdn.s3_bucket
-  tags   = local.tags
 }
 
 resource "aws_s3_bucket_object" "styles_css" {
@@ -38,7 +36,6 @@ resource "aws_s3_bucket_object" "styles_css" {
   key    = "styles/${each.value}"
 
   bucket = module.cdn.s3_bucket
-  tags   = local.tags
 }
 
 resource "aws_s3_bucket_object" "javascripts" {
@@ -52,17 +49,15 @@ resource "aws_s3_bucket_object" "javascripts" {
   key    = "javascripts/${each.value}"
 
   bucket = module.cdn.s3_bucket
-  tags   = local.tags
 }
 
 resource "aws_s3_bucket_object" "favicon_ico" {
   cache_control          = "max-age=604800"
   content_type           = "image/x-icon"
-  etag                   = "../../web_app/favicon.ico"
+  etag                   = filemd5("${var.web_path}/favicon.ico")
   key                    = "favicon.ico"
   server_side_encryption = "AES256"
   source                 = "${var.web_path}/favicon.ico"
 
   bucket = module.cdn.s3_bucket
-  tags   = local.tags
 }

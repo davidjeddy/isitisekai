@@ -3,17 +3,16 @@ variable "access_key" {
   description = "(required) AWS API access key id"
 }
 
+variable "delimiter" {
+  default     = "_"
+  type        = string
+  description = "Character used as the word separator when spaces are not valid"
+}
+
 variable "hostname" {
   default     = "isitisekai.com"
   type        = string
   description = "DNS hostname of project"
-}
-
-variable "logs_expiration_days" {
-  default     = 3650
-  type        = number
-  description = "How long should logs be kep"
-
 }
 
 variable "name" {
@@ -39,6 +38,12 @@ variable "secret_key" {
   description = "(required) AWS API secret key id"
 }
 
+variable "tags" {
+  default     = {}
+  type        = map(string)
+  description = "(optional) describe your variable"
+}
+
 variable "stage" {
   default     = "prd"
   type        = string
@@ -46,7 +51,7 @@ variable "stage" {
 }
 
 variable "web_path" {
-  default     = "../../web_path"
+  default     = "../../web_app"
   type        = string
   description = "Path where web assets are located"
 }

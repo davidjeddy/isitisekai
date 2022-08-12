@@ -1,4 +1,8 @@
 # https://runterrascan.io/docs/_print/#pg-07a53d0ea8f57b62a06a9235598d5c55
 [rules]
     scan-rules = []
-    skip-rules = []
+    skip-rules = [
+        "AC_AWS_0025", # Do not care to log access to the bucket from CloudFront due to scope of project
+        "AC_AWS_0366", # Not using the SQS functionality of the CDN module
+        "AC_AWS_0498", # Objects encrypted via bucket configuration
+    ]
