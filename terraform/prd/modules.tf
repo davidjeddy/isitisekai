@@ -13,11 +13,9 @@ module "cdn" {
     "www.${var.hostname}"
   ]
 
-  geo_restriction_locations = ["none"]
-
-  dns_alias_enabled    = true
-  encryption_enabled   = true
-  geo_restriction_type = "blacklist"
+  dns_alias_enabled  = true
+  encryption_enabled = true
+  # geo_restriction_type = "noe"
   # s3_access_log_bucket_name = join(var.delimiter, [var.namespace, var.stage, var.name, random_string.this.id, "logs"])
 }
 
@@ -29,7 +27,7 @@ module "acm_request_certificate" {
 
   process_domain_validation_options = true
 
-  ttl = "300"
+  ttl = 360
 
   subject_alternative_names = [
     "*.${var.hostname}"
