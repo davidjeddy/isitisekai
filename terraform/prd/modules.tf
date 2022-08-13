@@ -23,9 +23,12 @@ module "acm_request_certificate" {
   source  = "cloudposse/acm-request-certificate/aws"
   version = "0.16.0"
 
+  delimiter   = var.delimiter
   domain_name = var.hostname
-
-  process_domain_validation_options = true
+  name        = var.name
+  namespace   = var.namespace
+  stage       = var.stage
+  zone_id     = aws_route53_zone.this.zone_id
 
   ttl = 360
 
