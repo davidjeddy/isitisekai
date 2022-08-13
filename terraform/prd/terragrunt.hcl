@@ -11,35 +11,35 @@ terraform {
     execute  = ["terragrunt", "hclfmt", "."]
   }
 
-  // # https://runterrascan.io/ # best practice static analysis
-  // after_hook "terrascan" {
-  //   commands = ["apply", "plan"]
-  //   execute  = ["terrascan", "scan", "--config-path", "terrascan_config.toml", "--iac-type", "terraform", "--non-recursive"]
-  // }
+  # https://runterrascan.io/ # best practice static analysis
+  after_hook "terrascan" {
+    commands = ["apply", "plan"]
+    execute  = ["terrascan", "scan", "--config-path", "terrascan_config.toml", "--iac-type", "terraform", "--non-recursive"]
+  }
 
-  // # https://github.com/aquasecurity/tfsec # best practice static analysis
-  // after_hook "tfsec" {
-  //   commands = ["apply", "plan"]
-  //   execute  = ["tfsec", ".", "--concise-output", "--exclude-downloaded-modules", "--tfvars-file", "terraform.tfvars"]
-  // }
+  # https://github.com/aquasecurity/tfsec # best practice static analysis
+  after_hook "tfsec" {
+    commands = ["apply", "plan"]
+    execute  = ["tfsec", ".", "--concise-output", "--exclude-downloaded-modules", "--tfvars-file", "terraform.tfvars"]
+  }
 
-  // # https://github.com/infracost/infracost # cost control and reporting
-  // after_hook "infracost" {
-  //   commands = ["apply", "plan"]
-  //   execute  = ["infracost", "diff", "--compare-to", "infracost-base.json", "--path", ".", "--project-name", "isitisekai"]
-  // }
+  # https://github.com/infracost/infracost # cost control and reporting
+  after_hook "infracost" {
+    commands = ["apply", "plan"]
+    execute  = ["infracost", "diff", "--compare-to", "infracost-base.json", "--path", ".", "--project-name", "isitisekai"]
+  }
 
-  // # https://github.com/terraform-linters/tflint # best practice static analysis
-  // after_hook "tflint" {
-  //   commands = ["apply", "plan"]
-  //   execute  = ["tflint", "--color", "."]
-  // }
+  # https://github.com/terraform-linters/tflint # best practice static analysis
+  after_hook "tflint" {
+    commands = ["apply", "plan"]
+    execute  = ["tflint", "--color", "."]
+  }
 
-  // # https://github.com/bridgecrewio/checkov # best practice static analysis
-  // after_hook "checkov" {
-  //   commands = ["apply", "plan"]
-  //   execute  = ["checkov", "--directory", ".", "--framework", "terraform", "--framework", "terraform_plan", "--quiet"]
-  // }
+  # https://github.com/bridgecrewio/checkov # best practice static analysis
+  after_hook "checkov" {
+    commands = ["apply", "plan"]
+    execute  = ["checkov", "--directory", ".", "--framework", "terraform", "--framework", "terraform_plan", "--quiet"]
+  }
 
   extra_arguments "custom_vars" {
     commands = [
