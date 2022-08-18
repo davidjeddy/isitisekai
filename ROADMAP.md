@@ -5,3 +5,4 @@
 - Cost estimation per 1M views
 - Migrate project to Eddy Enterprises
 - Infrastructure Architectural Diagram
+- replace tgenv with tgswitch

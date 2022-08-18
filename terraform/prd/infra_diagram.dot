@@ -1,12 +1,16 @@
+[0;32m[INFO] Getting version from tgenv-version-name[0;39m
+[0;32m[INFO] TGENV_VERSION is 0.38.7[0;39m
 digraph {
 	compound = "true"
 	newrank = "true"
 	subgraph "root" {
-		"[root] aws_s3_bucket_object.favicon_ico (expand)" [label = "aws_s3_bucket_object.favicon_ico", shape = "box"]
+		"[root] aws_route53_zone.this (expand)" [label = "aws_route53_zone.this", shape = "box"]
+		"[root] aws_s3_bucket_object.image_ico (expand)" [label = "aws_s3_bucket_object.image_ico", shape = "box"]
 		"[root] aws_s3_bucket_object.images_jpg (expand)" [label = "aws_s3_bucket_object.images_jpg", shape = "box"]
-		"[root] aws_s3_bucket_object.index_html (expand)" [label = "aws_s3_bucket_object.index_html", shape = "box"]
 		"[root] aws_s3_bucket_object.javascripts (expand)" [label = "aws_s3_bucket_object.javascripts", shape = "box"]
 		"[root] aws_s3_bucket_object.styles_css (expand)" [label = "aws_s3_bucket_object.styles_css", shape = "box"]
+		"[root] aws_s3_bucket_object.text_html (expand)" [label = "aws_s3_bucket_object.text_html", shape = "box"]
+		"[root] data.aws_caller_identity.current (expand)" [label = "data.aws_caller_identity.current", shape = "box"]
 		"[root] module.acm_request_certificate.aws_acm_certificate.default (expand)" [label = "module.acm_request_certificate.aws_acm_certificate.default", shape = "box"]
 		"[root] module.acm_request_certificate.aws_acm_certificate_validation.default (expand)" [label = "module.acm_request_certificate.aws_acm_certificate_validation.default", shape = "box"]
 		"[root] module.acm_request_certificate.aws_route53_record.default (expand)" [label = "module.acm_request_certificate.aws_route53_record.default", shape = "box"]
@@ -45,30 +49,30 @@ digraph {
 		"[root] provider[\"registry.terraform.io/hashicorp/aws\"]" [label = "provider[\"registry.terraform.io/hashicorp/aws\"]", shape = "diamond"]
 		"[root] provider[\"registry.terraform.io/hashicorp/random\"]" [label = "provider[\"registry.terraform.io/hashicorp/random\"]", shape = "diamond"]
 		"[root] provider[\"registry.terraform.io/hashicorp/time\"]" [label = "provider[\"registry.terraform.io/hashicorp/time\"]", shape = "diamond"]
-		"[root] var.hostname" [label = "var.hostname", shape = "note"]
-		"[root] var.logs_expiration_days" [label = "var.logs_expiration_days", shape = "note"]
+		"[root] random_string.this (expand)" [label = "random_string.this", shape = "box"]
+		"[root] var.access_key" [label = "var.access_key", shape = "note"]
+		"[root] var.delimiter" [label = "var.delimiter", shape = "note"]
+		"[root] var.domain_name" [label = "var.domain_name", shape = "note"]
 		"[root] var.name" [label = "var.name", shape = "note"]
 		"[root] var.namespace" [label = "var.namespace", shape = "note"]
-		"[root] var.parent_zone_id" [label = "var.parent_zone_id", shape = "note"]
 		"[root] var.region" [label = "var.region", shape = "note"]
+		"[root] var.secret_key" [label = "var.secret_key", shape = "note"]
 		"[root] var.stage" [label = "var.stage", shape = "note"]
+		"[root] var.tags" [label = "var.tags", shape = "note"]
 		"[root] var.web_path" [label = "var.web_path", shape = "note"]
-		"[root] aws_s3_bucket_object.favicon_ico (expand)" -> "[root] local.tags (expand)"
-		"[root] aws_s3_bucket_object.favicon_ico (expand)" -> "[root] module.cdn.output.s3_bucket (expand)"
-		"[root] aws_s3_bucket_object.favicon_ico (expand)" -> "[root] var.web_path"
-		"[root] aws_s3_bucket_object.images_jpg (expand)" -> "[root] local.tags (expand)"
+		"[root] aws_route53_zone.this (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
+		"[root] aws_s3_bucket_object.image_ico (expand)" -> "[root] module.cdn.output.s3_bucket (expand)"
+		"[root] aws_s3_bucket_object.image_ico (expand)" -> "[root] var.web_path"
 		"[root] aws_s3_bucket_object.images_jpg (expand)" -> "[root] module.cdn.output.s3_bucket (expand)"
 		"[root] aws_s3_bucket_object.images_jpg (expand)" -> "[root] var.web_path"
-		"[root] aws_s3_bucket_object.index_html (expand)" -> "[root] local.tags (expand)"
-		"[root] aws_s3_bucket_object.index_html (expand)" -> "[root] module.cdn.output.s3_bucket (expand)"
-		"[root] aws_s3_bucket_object.index_html (expand)" -> "[root] var.web_path"
-		"[root] aws_s3_bucket_object.javascripts (expand)" -> "[root] local.tags (expand)"
 		"[root] aws_s3_bucket_object.javascripts (expand)" -> "[root] module.cdn.output.s3_bucket (expand)"
 		"[root] aws_s3_bucket_object.javascripts (expand)" -> "[root] var.web_path"
-		"[root] aws_s3_bucket_object.styles_css (expand)" -> "[root] local.tags (expand)"
 		"[root] aws_s3_bucket_object.styles_css (expand)" -> "[root] module.cdn.output.s3_bucket (expand)"
 		"[root] aws_s3_bucket_object.styles_css (expand)" -> "[root] var.web_path"
-		"[root] local.tags (expand)" -> "[root] var.hostname"
+		"[root] aws_s3_bucket_object.text_html (expand)" -> "[root] module.cdn.output.s3_bucket (expand)"
+		"[root] aws_s3_bucket_object.text_html (expand)" -> "[root] var.web_path"
+		"[root] data.aws_caller_identity.current (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
+		"[root] local.tags (expand)" -> "[root] var.domain_name"
 		"[root] local.tags (expand)" -> "[root] var.name"
 		"[root] local.tags (expand)" -> "[root] var.namespace"
 		"[root] local.tags (expand)" -> "[root] var.stage"
@@ -93,7 +97,6 @@ digraph {
 		"[root] module.acm_request_certificate.data.aws_route53_zone.default (expand)" -> "[root] module.acm_request_certificate.local.process_domain_validation_options (expand)"
 		"[root] module.acm_request_certificate.data.aws_route53_zone.default (expand)" -> "[root] module.acm_request_certificate.local.zone_name (expand)"
 		"[root] module.acm_request_certificate.data.aws_route53_zone.default (expand)" -> "[root] module.acm_request_certificate.var.zone_id (expand)"
-		"[root] module.acm_request_certificate.data.aws_route53_zone.default (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
 		"[root] module.acm_request_certificate.local.domain_validation_options_set (expand)" -> "[root] module.acm_request_certificate.aws_acm_certificate.default (expand)"
 		"[root] module.acm_request_certificate.local.domain_validation_options_set (expand)" -> "[root] module.acm_request_certificate.local.process_domain_validation_options (expand)"
 		"[root] module.acm_request_certificate.local.enabled (expand)" -> "[root] module.acm_request_certificate.module.this.output.enabled (expand)"
@@ -289,7 +292,7 @@ digraph {
 		"[root] module.acm_request_certificate.var.delimiter (expand)" -> "[root] module.acm_request_certificate (expand)"
 		"[root] module.acm_request_certificate.var.descriptor_formats (expand)" -> "[root] module.acm_request_certificate (expand)"
 		"[root] module.acm_request_certificate.var.domain_name (expand)" -> "[root] module.acm_request_certificate (expand)"
-		"[root] module.acm_request_certificate.var.domain_name (expand)" -> "[root] var.hostname"
+		"[root] module.acm_request_certificate.var.domain_name (expand)" -> "[root] var.domain_name"
 		"[root] module.acm_request_certificate.var.enabled (expand)" -> "[root] module.acm_request_certificate (expand)"
 		"[root] module.acm_request_certificate.var.environment (expand)" -> "[root] module.acm_request_certificate (expand)"
 		"[root] module.acm_request_certificate.var.id_length_limit (expand)" -> "[root] module.acm_request_certificate (expand)"
@@ -298,18 +301,23 @@ digraph {
 		"[root] module.acm_request_certificate.var.label_value_case (expand)" -> "[root] module.acm_request_certificate (expand)"
 		"[root] module.acm_request_certificate.var.labels_as_tags (expand)" -> "[root] module.acm_request_certificate (expand)"
 		"[root] module.acm_request_certificate.var.name (expand)" -> "[root] module.acm_request_certificate (expand)"
+		"[root] module.acm_request_certificate.var.name (expand)" -> "[root] random_string.this (expand)"
+		"[root] module.acm_request_certificate.var.name (expand)" -> "[root] var.delimiter"
+		"[root] module.acm_request_certificate.var.name (expand)" -> "[root] var.name"
+		"[root] module.acm_request_certificate.var.name (expand)" -> "[root] var.namespace"
+		"[root] module.acm_request_certificate.var.name (expand)" -> "[root] var.stage"
 		"[root] module.acm_request_certificate.var.namespace (expand)" -> "[root] module.acm_request_certificate (expand)"
 		"[root] module.acm_request_certificate.var.process_domain_validation_options (expand)" -> "[root] module.acm_request_certificate (expand)"
 		"[root] module.acm_request_certificate.var.regex_replace_chars (expand)" -> "[root] module.acm_request_certificate (expand)"
 		"[root] module.acm_request_certificate.var.stage (expand)" -> "[root] module.acm_request_certificate (expand)"
 		"[root] module.acm_request_certificate.var.subject_alternative_names (expand)" -> "[root] module.acm_request_certificate (expand)"
-		"[root] module.acm_request_certificate.var.subject_alternative_names (expand)" -> "[root] var.hostname"
-		"[root] module.acm_request_certificate.var.tags (expand)" -> "[root] local.tags (expand)"
+		"[root] module.acm_request_certificate.var.subject_alternative_names (expand)" -> "[root] var.domain_name"
 		"[root] module.acm_request_certificate.var.tags (expand)" -> "[root] module.acm_request_certificate (expand)"
 		"[root] module.acm_request_certificate.var.tenant (expand)" -> "[root] module.acm_request_certificate (expand)"
 		"[root] module.acm_request_certificate.var.ttl (expand)" -> "[root] module.acm_request_certificate (expand)"
 		"[root] module.acm_request_certificate.var.validation_method (expand)" -> "[root] module.acm_request_certificate (expand)"
 		"[root] module.acm_request_certificate.var.wait_for_certificate_issued (expand)" -> "[root] module.acm_request_certificate (expand)"
+		"[root] module.acm_request_certificate.var.zone_id (expand)" -> "[root] aws_route53_zone.this (expand)"
 		"[root] module.acm_request_certificate.var.zone_id (expand)" -> "[root] module.acm_request_certificate (expand)"
 		"[root] module.acm_request_certificate.var.zone_name (expand)" -> "[root] module.acm_request_certificate (expand)"
 		"[root] module.cdn (close)" -> "[root] module.cdn.aws_s3_bucket_ownership_controls.origin (expand)"
@@ -335,6 +343,7 @@ digraph {
 		"[root] module.cdn (close)" -> "[root] module.cdn.output.s3_bucket_arn (expand)"
 		"[root] module.cdn (close)" -> "[root] module.cdn.output.s3_bucket_domain_name (expand)"
 		"[root] module.cdn (close)" -> "[root] module.cdn.output.s3_bucket_policy (expand)"
+		"[root] module.cdn (expand)" -> "[root] module.acm_request_certificate (close)"
 		"[root] module.cdn.aws_cloudfront_distribution.default (expand)" -> "[root] module.cdn.local.bucket_domain_name (expand)"
 		"[root] module.cdn.aws_cloudfront_distribution.default (expand)" -> "[root] module.cdn.local.cf_access (expand)"
 		"[root] module.cdn.aws_cloudfront_distribution.default (expand)" -> "[root] module.cdn.local.cf_log_bucket_domain (expand)"
@@ -380,7 +389,6 @@ digraph {
 		"[root] module.cdn.aws_cloudfront_distribution.default (expand)" -> "[root] module.cdn.var.web_acl_id (expand)"
 		"[root] module.cdn.aws_cloudfront_origin_access_identity.default (expand)" -> "[root] module.cdn.local.create_cloudfront_origin_access_identity (expand)"
 		"[root] module.cdn.aws_cloudfront_origin_access_identity.default (expand)" -> "[root] module.cdn.local.origin_id (expand)"
-		"[root] module.cdn.aws_cloudfront_origin_access_identity.default (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
 		"[root] module.cdn.aws_s3_bucket.origin (expand)" -> "[root] module.cdn.local.create_s3_origin_bucket (expand)"
 		"[root] module.cdn.aws_s3_bucket.origin (expand)" -> "[root] module.cdn.local.origin_id (expand)"
 		"[root] module.cdn.aws_s3_bucket.origin (expand)" -> "[root] module.cdn.local.s3_access_log_bucket_name (expand)"
@@ -399,7 +407,6 @@ digraph {
 		"[root] module.cdn.aws_s3_bucket.origin (expand)" -> "[root] module.cdn.var.s3_access_log_prefix (expand)"
 		"[root] module.cdn.aws_s3_bucket.origin (expand)" -> "[root] module.cdn.var.versioning_enabled (expand)"
 		"[root] module.cdn.aws_s3_bucket.origin (expand)" -> "[root] module.cdn.var.website_enabled (expand)"
-		"[root] module.cdn.aws_s3_bucket.origin (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
 		"[root] module.cdn.aws_s3_bucket_ownership_controls.origin (expand)" -> "[root] module.cdn.time_sleep.wait_for_aws_s3_bucket_settings (expand)"
 		"[root] module.cdn.aws_s3_bucket_ownership_controls.origin (expand)" -> "[root] module.cdn.var.s3_object_ownership (expand)"
 		"[root] module.cdn.aws_s3_bucket_policy.default (expand)" -> "[root] module.cdn.data.aws_iam_policy_document.combined (expand)"
@@ -422,13 +429,10 @@ digraph {
 		"[root] module.cdn.data.aws_iam_policy_document.s3_website_origin (expand)" -> "[root] module.cdn.local.override_policy (expand)"
 		"[root] module.cdn.data.aws_iam_policy_document.s3_website_origin (expand)" -> "[root] module.cdn.random_password.referer (expand)"
 		"[root] module.cdn.data.aws_partition.current (expand)" -> "[root] module.cdn.local.enabled (expand)"
-		"[root] module.cdn.data.aws_partition.current (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
 		"[root] module.cdn.data.aws_s3_bucket.cf_logs (expand)" -> "[root] module.cdn.local.lookup_cf_log_bucket (expand)"
 		"[root] module.cdn.data.aws_s3_bucket.cf_logs (expand)" -> "[root] module.cdn.var.cloudfront_access_log_bucket_name (expand)"
-		"[root] module.cdn.data.aws_s3_bucket.cf_logs (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
 		"[root] module.cdn.data.aws_s3_bucket.origin (expand)" -> "[root] module.cdn.local.enabled (expand)"
 		"[root] module.cdn.data.aws_s3_bucket.origin (expand)" -> "[root] module.cdn.var.origin_bucket (expand)"
-		"[root] module.cdn.data.aws_s3_bucket.origin (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
 		"[root] module.cdn.local.bucket (expand)" -> "[root] module.cdn.local.origin_bucket (expand)"
 		"[root] module.cdn.local.bucket_domain_name (expand)" -> "[root] module.cdn.local.origin_bucket (expand)"
 		"[root] module.cdn.local.cf_access (expand)" -> "[root] module.cdn.local.cf_access_options (expand)"
@@ -508,7 +512,6 @@ digraph {
 		"[root] module.cdn.module.dns.data.aws_route53_zone.default (expand)" -> "[root] module.cdn.module.dns.var.parent_zone_id (expand)"
 		"[root] module.cdn.module.dns.data.aws_route53_zone.default (expand)" -> "[root] module.cdn.module.dns.var.parent_zone_name (expand)"
 		"[root] module.cdn.module.dns.data.aws_route53_zone.default (expand)" -> "[root] module.cdn.module.dns.var.private_zone (expand)"
-		"[root] module.cdn.module.dns.data.aws_route53_zone.default (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
 		"[root] module.cdn.module.dns.module.this (close)" -> "[root] module.cdn.module.dns.module.this.output.additional_tag_map (expand)"
 		"[root] module.cdn.module.dns.module.this (close)" -> "[root] module.cdn.module.dns.module.this.output.attributes (expand)"
 		"[root] module.cdn.module.dns.module.this (close)" -> "[root] module.cdn.module.dns.module.this.output.context (expand)"
@@ -755,7 +758,6 @@ digraph {
 		"[root] module.cdn.module.logs.aws_s3_bucket.default (expand)" -> "[root] module.cdn.module.logs.var.standard_transition_days (expand)"
 		"[root] module.cdn.module.logs.aws_s3_bucket.default (expand)" -> "[root] module.cdn.module.logs.var.versioning_enabled (expand)"
 		"[root] module.cdn.module.logs.aws_s3_bucket.default (expand)" -> "[root] module.cdn.module.logs.var.versioning_mfa_delete_enabled (expand)"
-		"[root] module.cdn.module.logs.aws_s3_bucket.default (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
 		"[root] module.cdn.module.logs.aws_s3_bucket_notification.bucket_notification (expand)" -> "[root] module.cdn.module.logs.aws_sqs_queue.notifications (expand)"
 		"[root] module.cdn.module.logs.aws_s3_bucket_notification.bucket_notification (expand)" -> "[root] module.cdn.module.logs.var.bucket_notifications_prefix (expand)"
 		"[root] module.cdn.module.logs.aws_s3_bucket_ownership_controls.default (expand)" -> "[root] module.cdn.module.logs.time_sleep.wait_for_aws_s3_bucket_settings (expand)"
@@ -768,7 +770,6 @@ digraph {
 		"[root] module.cdn.module.logs.aws_s3_bucket_public_access_block.default (expand)" -> "[root] module.cdn.module.logs.var.restrict_public_buckets (expand)"
 		"[root] module.cdn.module.logs.aws_sqs_queue.notifications (expand)" -> "[root] module.cdn.module.logs.data.aws_iam_policy_document.sqs_policy (expand)"
 		"[root] module.cdn.module.logs.data.aws_caller_identity.current (expand)" -> "[root] module.cdn.module.logs (expand)"
-		"[root] module.cdn.module.logs.data.aws_caller_identity.current (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
 		"[root] module.cdn.module.logs.data.aws_iam_policy_document.aggregated_policy (expand)" -> "[root] module.cdn.module.logs.data.aws_iam_policy_document.bucket_policy (expand)"
 		"[root] module.cdn.module.logs.data.aws_iam_policy_document.bucket_policy (expand)" -> "[root] module.cdn.module.logs.aws_s3_bucket.default (expand)"
 		"[root] module.cdn.module.logs.data.aws_iam_policy_document.bucket_policy (expand)" -> "[root] module.cdn.module.logs.data.aws_partition.current (expand)"
@@ -779,7 +780,6 @@ digraph {
 		"[root] module.cdn.module.logs.data.aws_iam_policy_document.sqs_policy (expand)" -> "[root] module.cdn.module.logs.local.sqs_notifications_enabled (expand)"
 		"[root] module.cdn.module.logs.data.aws_iam_policy_document.sqs_policy (expand)" -> "[root] module.cdn.module.logs.local.sqs_queue_name (expand)"
 		"[root] module.cdn.module.logs.data.aws_partition.current (expand)" -> "[root] module.cdn.module.logs (expand)"
-		"[root] module.cdn.module.logs.data.aws_partition.current (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
 		"[root] module.cdn.module.logs.local.sqs_notifications_enabled (expand)" -> "[root] module.cdn.module.logs.module.this.output.enabled (expand)"
 		"[root] module.cdn.module.logs.local.sqs_notifications_enabled (expand)" -> "[root] module.cdn.module.logs.var.bucket_notifications_enabled (expand)"
 		"[root] module.cdn.module.logs.local.sqs_notifications_enabled (expand)" -> "[root] module.cdn.module.logs.var.bucket_notifications_type (expand)"
@@ -1374,16 +1374,13 @@ digraph {
 		"[root] module.cdn.output.s3_bucket_domain_name (expand)" -> "[root] module.cdn.local.bucket_domain_name (expand)"
 		"[root] module.cdn.output.s3_bucket_policy (expand)" -> "[root] module.cdn.aws_s3_bucket_policy.default (expand)"
 		"[root] module.cdn.random_password.referer (expand)" -> "[root] module.cdn.local.website_password_enabled (expand)"
-		"[root] module.cdn.random_password.referer (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/random\"]"
 		"[root] module.cdn.time_sleep.wait_for_aws_s3_bucket_settings (expand)" -> "[root] module.cdn.aws_s3_bucket_public_access_block.origin (expand)"
 		"[root] module.cdn.time_sleep.wait_for_aws_s3_bucket_settings (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/time\"]"
 		"[root] module.cdn.var.access_log_bucket_name (expand)" -> "[root] module.cdn (expand)"
-		"[root] module.cdn.var.acm_certificate_arn (expand)" -> "[root] module.acm_request_certificate.output.arn (expand)"
 		"[root] module.cdn.var.acm_certificate_arn (expand)" -> "[root] module.cdn (expand)"
 		"[root] module.cdn.var.additional_bucket_policy (expand)" -> "[root] module.cdn (expand)"
 		"[root] module.cdn.var.additional_tag_map (expand)" -> "[root] module.cdn (expand)"
 		"[root] module.cdn.var.aliases (expand)" -> "[root] module.cdn (expand)"
-		"[root] module.cdn.var.aliases (expand)" -> "[root] var.hostname"
 		"[root] module.cdn.var.allow_ssl_requests_only (expand)" -> "[root] module.cdn (expand)"
 		"[root] module.cdn.var.allowed_methods (expand)" -> "[root] module.cdn (expand)"
 		"[root] module.cdn.var.attributes (expand)" -> "[root] module.cdn (expand)"
@@ -1448,9 +1445,7 @@ digraph {
 		"[root] module.cdn.var.min_ttl (expand)" -> "[root] module.cdn (expand)"
 		"[root] module.cdn.var.minimum_protocol_version (expand)" -> "[root] module.cdn (expand)"
 		"[root] module.cdn.var.name (expand)" -> "[root] module.cdn (expand)"
-		"[root] module.cdn.var.name (expand)" -> "[root] var.name"
 		"[root] module.cdn.var.namespace (expand)" -> "[root] module.cdn (expand)"
-		"[root] module.cdn.var.namespace (expand)" -> "[root] var.namespace"
 		"[root] module.cdn.var.ordered_cache (expand)" -> "[root] module.cdn (expand)"
 		"[root] module.cdn.var.origin_bucket (expand)" -> "[root] module.cdn (expand)"
 		"[root] module.cdn.var.origin_force_destroy (expand)" -> "[root] module.cdn (expand)"
@@ -1460,7 +1455,6 @@ digraph {
 		"[root] module.cdn.var.origin_ssl_protocols (expand)" -> "[root] module.cdn (expand)"
 		"[root] module.cdn.var.override_origin_bucket_policy (expand)" -> "[root] module.cdn (expand)"
 		"[root] module.cdn.var.parent_zone_id (expand)" -> "[root] module.cdn (expand)"
-		"[root] module.cdn.var.parent_zone_id (expand)" -> "[root] var.parent_zone_id"
 		"[root] module.cdn.var.parent_zone_name (expand)" -> "[root] module.cdn (expand)"
 		"[root] module.cdn.var.price_class (expand)" -> "[root] module.cdn (expand)"
 		"[root] module.cdn.var.query_string_cache_keys (expand)" -> "[root] module.cdn (expand)"
@@ -1476,7 +1470,6 @@ digraph {
 		"[root] module.cdn.var.s3_origins (expand)" -> "[root] module.cdn (expand)"
 		"[root] module.cdn.var.s3_website_password_enabled (expand)" -> "[root] module.cdn (expand)"
 		"[root] module.cdn.var.stage (expand)" -> "[root] module.cdn (expand)"
-		"[root] module.cdn.var.stage (expand)" -> "[root] var.stage"
 		"[root] module.cdn.var.tags (expand)" -> "[root] module.cdn (expand)"
 		"[root] module.cdn.var.tenant (expand)" -> "[root] module.cdn (expand)"
 		"[root] module.cdn.var.trusted_key_groups (expand)" -> "[root] module.cdn (expand)"
@@ -1486,27 +1479,30 @@ digraph {
 		"[root] module.cdn.var.wait_for_deployment (expand)" -> "[root] module.cdn (expand)"
 		"[root] module.cdn.var.web_acl_id (expand)" -> "[root] module.cdn (expand)"
 		"[root] module.cdn.var.website_enabled (expand)" -> "[root] module.cdn (expand)"
-		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_s3_bucket_object.favicon_ico (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_s3_bucket_object.image_ico (expand)"
 		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_s3_bucket_object.images_jpg (expand)"
-		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_s3_bucket_object.index_html (expand)"
 		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_s3_bucket_object.javascripts (expand)"
 		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_s3_bucket_object.styles_css (expand)"
-		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] module.acm_request_certificate.aws_acm_certificate_validation.default (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_s3_bucket_object.text_html (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] data.aws_caller_identity.current (expand)"
 		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] module.cdn.aws_s3_bucket_ownership_controls.origin (expand)"
 		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] module.cdn.module.dns.aws_route53_record.default (expand)"
 		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] module.cdn.module.dns.aws_route53_record.ipv6 (expand)"
 		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] module.cdn.module.logs.aws_s3_bucket_notification.bucket_notification (expand)"
 		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] module.cdn.module.logs.aws_s3_bucket_ownership_controls.default (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"]" -> "[root] var.access_key"
 		"[root] provider[\"registry.terraform.io/hashicorp/aws\"]" -> "[root] var.region"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"]" -> "[root] var.secret_key"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"]" -> "[root] var.tags"
 		"[root] provider[\"registry.terraform.io/hashicorp/random\"] (close)" -> "[root] module.cdn.random_password.referer (expand)"
 		"[root] provider[\"registry.terraform.io/hashicorp/time\"] (close)" -> "[root] module.cdn.module.logs.time_sleep.wait_for_aws_s3_bucket_settings (expand)"
 		"[root] provider[\"registry.terraform.io/hashicorp/time\"] (close)" -> "[root] module.cdn.time_sleep.wait_for_aws_s3_bucket_settings (expand)"
-		"[root] root" -> "[root] module.acm_request_certificate (close)"
+		"[root] random_string.this (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/random\"]"
+		"[root] root" -> "[root] local.tags (expand)"
 		"[root] root" -> "[root] module.cdn (close)"
 		"[root] root" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)"
 		"[root] root" -> "[root] provider[\"registry.terraform.io/hashicorp/random\"] (close)"
 		"[root] root" -> "[root] provider[\"registry.terraform.io/hashicorp/time\"] (close)"
-		"[root] root" -> "[root] var.logs_expiration_days"
 	}
 }
 

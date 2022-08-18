@@ -26,7 +26,7 @@ terraform {
   # https://github.com/infracost/infracost # cost control and reporting
   after_hook "infracost" {
     commands = ["apply", "plan"]
-    execute  = ["infracost", "diff", "--compare-to", "infracost-base.json", "--path", ".", "--project-name", "isitisekai"]
+    execute  = ["infracost", "diff", "--compare-to", "infracost-base.json", "--path", ".", "--project-name", "isitisekai/prd"]
   }
 
   # https://github.com/terraform-linters/tflint # best practice static analysis

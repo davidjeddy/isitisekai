@@ -1,9 +1,9 @@
 # locals
 locals {
   tags = {
-    "hostname"  = var.hostname
-    "name"      = var.name
-    "namespace" = var.namespace
-    "stage"     = var.stage
+    "domain_name" = var.domain_name
+    "name"        = var.name
+    "namespace"   = var.namespace
+    "stage"       = var.stage
   }
 }

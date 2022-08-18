@@ -4,15 +4,15 @@ variable "access_key" {
 }
 
 variable "delimiter" {
-  default     = "_"
+  default     = "-"
   type        = string
   description = "Character used as the word separator when spaces are not valid"
 }
 
-variable "hostname" {
+variable "domain_name" {
   default     = "isitisekai.com"
   type        = string
-  description = "DNS hostname of project"
+  description = "Domain name of project"
 }
 
 variable "name" {

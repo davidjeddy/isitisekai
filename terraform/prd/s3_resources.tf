@@ -1,5 +1,5 @@
 resource "aws_s3_bucket_object" "text_html" {
-  for_each = fileset("${var.web_path}/images/", "*.html")
+  for_each = fileset("${var.web_path}/", "*.html")
 
   content_type           = "text/html"
   server_side_encryption = "AES256"

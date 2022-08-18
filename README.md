@@ -128,7 +128,7 @@ Now re-generate the [Terraform Graphviz diagram](./infra_diagram.dot).
 
 ```sh
 cd ./terraform/prd
-terragrunt graph > ../../infra_diagram.dot
+terragrunt graph > infra_diagram.dot
 ```
 
 ### Stop / Destroy
