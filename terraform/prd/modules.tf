@@ -14,6 +14,7 @@ module "cdn" {
   geo_restriction_type = "none"
 
   aliases = [
+    var.domain_name,
     "*.${var.domain_name}"
   ]
 
@@ -29,6 +30,7 @@ module "acm_request_certificate" {
   zone_id     = aws_route53_zone.this.zone_id
 
   subject_alternative_names = [
+    var.domain_name,
     "*.${var.domain_name}"
   ]
 }
