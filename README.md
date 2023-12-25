@@ -92,19 +92,21 @@ git clone git@github.com:davidjeddy/isitisekai.com.git
 ### Configure
 
 ```sh
-cp ./terraform/prd/terraform.tfenv.dist ./terraform/prd/terraform.tfenv
-vi ./terraform/prd/terraform.tfenv
+cd /project/root/terraform/${ENV}/${RND}/
+cp terraform.tfenv.dist terraform.tfenv
+vi terraform.tfenv
 # add appropriate values
+tfenv install
+tgenv install
 ```
 
 ### Run
 
 ```sh
-cd ./terraform/prd
+cd /project/root/terraform/${ENV}/${RND}/
 terragrunt init
 terragrunt plan
 terragrunt apply
-# `yes` [ENTER] when prompted
 ```
 
 ### Test
