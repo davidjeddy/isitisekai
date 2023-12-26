@@ -27,6 +27,12 @@ variable "namespace" {
   description = "Project namespace"
 }
 
+variable "random_string" {
+  default     = "la8o"
+  description = "(required) Entropy string"
+  type        = string
+}
+
 variable "region" {
   default     = "us-east-1"
   description = "Default region the AWS provider should execute against."
@@ -51,7 +57,7 @@ variable "stage" {
 }
 
 variable "web_path" {
-  default     = "../../web_app"
+  default     = "../../../../../web_app"
   type        = string
   description = "Path where web assets are located"
 }

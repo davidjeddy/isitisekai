@@ -1,0 +1,7 @@
+skip-check:
+  - CKV_AWS_186 # Ensure S3 bucket Object is encrypted by KMS using a customer managed Key (CMK)
+  - CKV_AWS_273 # Ensure access is controlled through SSO and not AWS IAM defined users # Static credentials not set in project
+  - CKV_AWS_41 # Ensure no hard coded AWS access key and secret key exists in provider
+  - CKV_TF_1 # Ensure Terraform module sources use a commit hash" # Project used IAC source and version pinning
+  - CKV2_AWS_38 # Ensure Domain Name System Security Extensions (DNSSEC) signing is enabled for Amazon Route 53 public hosted zones # shared module enables DNSSEC
+  - CKV2_AWS_39 # Ensure Domain Name System (DNS) query logging is enabled for Amazon Route 53 hosted zones # Route 53 DNS query logging enabled

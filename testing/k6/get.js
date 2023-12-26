@@ -6,7 +6,7 @@ export const options = {
             executor: 'constant-arrival-rate',
             rate: 2500,
             duration: '30s',
-            preAllocatedVUs: 10, // how large the initial pool of VUs would be
+            preAllocatedVUs: 20, // how large the initial pool of VUs would be
             maxVUs: 100, // if the preAllocatedVUs are not enough, we can initialize more
         },
     },

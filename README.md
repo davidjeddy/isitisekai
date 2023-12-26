@@ -34,6 +34,7 @@ This project will tell you is an anime is of the isekai genre or not.
     - [Configure](#configure)
     - [Run](#run)
     - [Test](#test)
+      - [k6](#k6)
     - [Update](#update)
     - [Stop / Destroy](#stop--destroy)
   - [Common Errors and Fixes](#common-errors-and-fixes)
@@ -92,12 +93,17 @@ git clone git@github.com:davidjeddy/isitisekai.com.git
 ### Configure
 
 ```sh
-cd /project/root/terraform/${ENV}/${RND}/
-cp terraform.tfenv.dist terraform.tfenv
-vi terraform.tfenv
-# add appropriate values
-tfenv install
-tgenv install
+cd /root_of_project/iac/aws/prd/${AWS_REGION}/${RND_STR}
+# Configure providers
+vi providers.tf
+# Configure state
+vi terraform.tf
+# Install providers
+terragrunt init
+# Create init cost report
+infracost breakdown --format json --out-file infracost-base.json --path .
+# Init tflint libraries
+tflint --init
 ```
 
 ### Run
@@ -111,8 +117,15 @@ terragrunt apply
 
 ### Test
 
+#### k6
+
 ```sh
-k6 run -e HOSTNAME=isitisekai.com ./test/k6/get.js
+cd /root_of_project/testing/k6
+k6 run \
+  --env HOSTNAME=isitisekai.com \
+  --log-output file=./logs/$(date +%s).log \
+  ./get.js \
+  | tee ./results/$(date +%s).log
 ```
 
 ### Update
@@ -122,15 +135,6 @@ terragrunt plan
 # check the listed changes
 terragrunt apply
 # `yes` then [ENTER] when prompted
-```
-
-Also, after updating resources stored in S3 you must trigger a CloudFront Distribution invalidation to get the changes to display at the URL.
-
-Now re-generate the [Terraform Graphviz diagram](./infra_diagram.dot).
-
-```sh
-cd ./terraform/prd
-terragrunt graph > infra_diagram.dot
 ```
 
 ### Stop / Destroy

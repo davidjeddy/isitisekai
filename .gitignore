@@ -4,19 +4,13 @@
 **/.infracost/*
 
 # .tfstate files
-*.tfstate
-*.tfstate.*
-
-# Crash log files
-crash.log
-crash.*.log
+*.tfstate*
 
 # Exclude all .tfvars files, which are likely to contain sensitive data, such as
 # password, private keys, and other secrets. These should not be part of version 
 # control as they are data points which are potentially sensitive and subject 
 # to change depending on the environment.
-*.tfvars
-*.tfvars.json
+*.tfvars*
 
 # Ignore override files as they are usually used to override resources locally and so
 # are not checked in
@@ -35,5 +29,19 @@ override.tf.json
 .terraformrc
 terraform.rc
 
+# macOS meta data
+.DS_Store
+
+# ignore SSH keys
+*.pem
+*.pub
+*.prv
+
 # macOS/Win folder metadata
 .DS_Store
+
+# Log outputs
+*.log
+
+# Scratch working dir
+.tmp
