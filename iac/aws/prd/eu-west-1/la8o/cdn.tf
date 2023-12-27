@@ -1,6 +1,6 @@
 module "cdn" {
   source  = "cloudposse/cloudfront-s3-cdn/aws"
-  version = "0.82.5"
+  version = "0.92.0"
 
   acm_certificate_arn = module.acm_request_certificate.arn
   name                = join(var.delimiter, [var.namespace, var.name, var.stage, var.random_string])
@@ -9,6 +9,7 @@ module "cdn" {
   dns_alias_enabled    = true
   encryption_enabled   = true
   geo_restriction_type = "none"
+  ipv6_enabled         = true
 
   aliases = [
     var.domain_name,

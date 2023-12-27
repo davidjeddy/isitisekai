@@ -5,21 +5,21 @@
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.2.6 |
-| <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~> 4.0 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.6.0 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~> 5.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | 4.28.0 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | 5.31.0 |
 
 ## Modules
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_acm_request_certificate"></a> [acm\_request\_certificate](#module\_acm\_request\_certificate) | cloudposse/acm-request-certificate/aws | 0.16.0 |
-| <a name="module_cdn"></a> [cdn](#module\_cdn) | cloudposse/cloudfront-s3-cdn/aws | 0.82.5 |
+| <a name="module_acm_request_certificate"></a> [acm\_request\_certificate](#module\_acm\_request\_certificate) | cloudposse/acm-request-certificate/aws | 0.16.3 |
+| <a name="module_cdn"></a> [cdn](#module\_cdn) | cloudposse/cloudfront-s3-cdn/aws | 0.92.0 |
 
 ## Resources
 
