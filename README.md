@@ -28,16 +28,19 @@ This project will tell you is an anime is of the isekai genre or not.
     - [Code of Conduct](#code-of-conduct)
     - [Contributing Guidelines](#contributing-guidelines)
     - [Development Documentation](#development-documentation)
+  - [RoadMap](#roadmap)
   - [Requirements](#requirements)
-  - [How to](#how-to)
-    - [Pre-Flight](#pre-flight)
+  - [Runbook](#runbook)
+  - [Usage](#usage)
+    - [Download](#download)
     - [Configure](#configure)
-    - [Run](#run)
-    - [Test](#test)
-      - [k6](#k6)
+      - [Configure IAC](#configure-iac)
+    - [Execute](#execute)
+      - [Execute IAC](#execute-iac)
+    - [Terminate](#terminate)
+      - [Testing](#testing)
     - [Update](#update)
     - [Stop / Destroy](#stop--destroy)
-  - [Common Errors and Fixes](#common-errors-and-fixes)
   - [Versioning](#versioning)
   - [References and Sources](#references-and-sources)
     - [CSS](#css)
@@ -58,7 +61,13 @@ Please see [CONTRIBUTING_GUIDELINES.md](./CONTRIBUTING_GUIDELINES.md).
 
 ### Development Documentation
 
-Please see [DEVDOCS.md](./DEVDOCS.md).
+Please see [DEVELOPMENT.md](./DEVELOPMENT.md).
+
+## RoadMap
+
+Upcoming planned project changes and feature adds.
+
+[./ROADMAP.md](./ROADMAP.md)
 
 ## Requirements
 
@@ -73,24 +82,27 @@ Please see [DEVDOCS.md](./DEVDOCS.md).
 - [tfsec](https://github.com/aquasecurity/tfsec)
 - [k6 open source](https://k6.io/open-source/)
 
-## How to
+## Runbook
 
-### Pre-Flight
+A collection of errors and corrective actions within the scope of this project.
 
-Enable remote state storage using Terraform Cloud
+[./RUNBOOK](./RUNBOOK.md)
+
+## Usage
+
+### Download
 
 ```sh
+git clone https://github.com/davidjeddy/windblows
+# auth to access remote state storage
 terraform login
-```
-
-Clone the project from remote Git repository
-
-```sh
-# clone project
-git clone git@github.com:davidjeddy/isitisekai.com.git
+# auth to access budget reporting
+infracost auth login
 ```
 
 ### Configure
+
+#### Configure IAC
 
 ```sh
 cd /root_of_project/iac/aws/prd/${AWS_REGION}/${RND_STR}
@@ -106,26 +118,29 @@ infracost breakdown --format json --out-file infracost-base.json --path .
 tflint --init
 ```
 
-### Run
+### Execute
+
+#### Execute IAC
 
 ```sh
-cd /project/root/terraform/${ENV}/${RND}/
-terragrunt init
 terragrunt plan
 terragrunt apply
 ```
 
-### Test
+### Terminate
 
-#### k6
+Terminate IAC resources via updating configuration. DO NOT `destroy` any resources.
+
+#### Testing
 
 ```sh
 cd /root_of_project/testing/k6
 k6 run \
-  --env HOSTNAME=isitisekai.com \
-  --log-output file=./logs/$(date +%s).log \
-  ./get.js \
-  | tee ./results/$(date +%s).log
+  --env HOSTNAME=windblows.com \
+  --log-output file=$(date +%s).log \
+  --quiet \
+  get.js \
+  | tee $(date +%s).log
 ```
 
 ### Update
@@ -144,10 +159,6 @@ cd ./terraform/prd
 terragrunt destroy
 # `yes` [ENTER] when prompted
 ```
-
-## Common Errors and Fixes
-
-[Common Errors and Fixes](./COMMON_ERRORS_AND_FIXES.md)
 
 ## Versioning
 

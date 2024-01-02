@@ -1,6 +1,20 @@
 # This file is maintained automatically by "terraform init".
 # Manual edits may be lost in future updates.
 
+provider "registry.terraform.io/cloudposse/awsutils" {
+  version     = "0.18.1"
+  constraints = ">= 0.18.0"
+  hashes = [
+    "h1:nhsNxHsJb3u9pxFQn+b/RvRTgI/D16xgdpEabNwxkgs=",
+    "zh:231c253fa84978923d85f7b978ac803518789bcb7c8eb89169b448dd3b10a02c",
+    "zh:b9831c24cf3150e01650659d666109009de3cf140d9858e35b98fe01907f7aa9",
+    "zh:c982d4282f5fe65ebb242543b037a17931f190b149d43fbc2e655ec76e682f17",
+    "zh:cd8b76a7f033c5e759e148c5cd75316c050d1af44d892516ffab8adda96bc8e8",
+    "zh:cfb03f8189aa2a22fc6b218133e72808b73624bddbcb7458526d05a2451a20eb",
+    "zh:f75f9e992622b6ba858c609eac16d3544d610a2b92543ebcd34f57514d046936",
+  ]
+}
+
 provider "registry.terraform.io/hashicorp/aws" {
   version     = "5.31.0"
   constraints = ">= 2.0.0, >= 3.0.0, >= 4.9.0, ~> 5.0"

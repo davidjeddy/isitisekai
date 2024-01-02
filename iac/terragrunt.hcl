@@ -1,8 +1,8 @@
 terraform {
   # https://runterrascan.io/ # style linting  for TF files
   before_hook "terraform fmt" {
-    commands     = ["apply", "init", "plan"]
-    execute      = ["sh", "-c", "terraform fmt -recursive ."]
+    commands = ["apply", "init", "plan"]
+    execute  = ["sh", "-c", "terraform fmt -recursive ."]
   }
 
   # https://github.com/terraform-docs/terraform-docs # API documentation generationtflint
@@ -13,8 +13,8 @@ terraform {
 
   # https://terragrunt.gruntwork.io/docs/reference/cli-options/#hclfmt # style linting for HCL files
   before_hook "terragrunt fmt" {
-    commands     = ["apply", "init", "plan"]
-    execute      = ["sh", "-c", "terragrunt hclfmt ."]
+    commands  = ["apply", "init", "plan"]
+    execute   = ["sh", "-c", "terragrunt hclfmt ."]
   }
 
   # https://developer.hashicorp.com/terraform/cli/commands/graph # Render acylical dependency graph
@@ -26,8 +26,8 @@ terraform {
 
   # https://github.com/infracost/infracost # cost control and reporting
   before_hook "infracost" {
-    commands     = ["apply", "plan"]
-    execute      = ["sh", "-c", "infracost diff --compare-to infracost-base.json --path . --project-name eddy_enterprises/isitisekai --show-skipped"]
+    commands  = ["apply", "plan"]
+    execute   = ["sh", "-c", "infracost diff --compare-to infracost-base.json --path . --project-name eddy_enterprises/isitisekai --show-skipped"]
   }
 
   # https://runterrascan.io/ # best practice static analysis
@@ -61,15 +61,15 @@ terraform {
   # https://github.com/aquasecurity/tfsec # best practice static analysis
   # Depricated scanner from aquasecurity
   before_hook "tfsec" {
-    commands     = ["apply", "plan"]
-    execute      = ["sh", "-c", "tfsec . --config-file .tfsec.yml --concise-output --exclude-downloaded-modules"]
+    commands  = ["apply", "plan"]
+    execute   = ["sh", "-c", "tfsec . --config-file .tfsec.yml --concise-output --exclude-downloaded-modules"]
   }
 
   # https://github.com/aquasecurity/trivy # best practice static analysis
   # Current scanner from aquasecurity
   before_hook "trivy" {
-    commands     = ["apply", "plan"]
-    execute      = ["sh", "-c", "trivy config --config .trivy.yml --misconfig-scanners terraform --skip-dirs .infracost,.terra* --tf-exclude-downloaded-modules ."]
+    commands  = ["apply", "plan"]
+    execute   = ["sh", "-c", "trivy config --config .trivy.yml --misconfig-scanners terraform --skip-dirs .infracost,.terra* --tf-exclude-downloaded-modules ."]
   }
 
   extra_arguments "custom_vars" {

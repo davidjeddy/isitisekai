@@ -1,63 +1,50 @@
-variable "access_key" {
-  type        = string
-  description = "(required) AWS API access key id"
-}
+# Required
 
-variable "delimiter" {
-  default     = "-"
-  type        = string
-  description = "Character used as the word separator when spaces are not valid"
-}
+## Generics
 
-variable "domain_name" {
-  default     = "isitisekai.com"
-  type        = string
-  description = "Domain name of project"
+variable "acct_id" {
+  default     = 661121151831
+  description = "(required) AWS account ID"
+  type        = number
 }
 
 variable "name" {
   default     = "isitisekai"
+  description = "(required) Project name. Use the same delimiter as `var.delimiter`"
   type        = string
-  description = "Name of the project"
 }
 
 variable "namespace" {
-  default     = "dje"
+  default     = "ee"
+  description = "(required) Owning organization short name"
   type        = string
-  description = "Project namespace"
 }
 
 variable "random_string" {
   default     = "la8o"
-  description = "(required) Entropy string"
+  description = "(required) Entropy string to uniquely the deployment"
   type        = string
 }
 
 variable "region" {
   default     = "us-east-1"
-  description = "Default region the AWS provider should execute against."
+  description = "(required) AWS region to deploy resources into"
   type        = string
-}
-
-variable "secret_key" {
-  type        = string
-  description = "(required) AWS API secret key id"
-}
-
-variable "tags" {
-  default     = {}
-  type        = map(string)
-  description = "(optional) describe your variable"
 }
 
 variable "stage" {
   default     = "prd"
+  description = "(required) The stage; aka environment"
   type        = string
-  description = "The stage of this deployment"
 }
 
-variable "web_path" {
-  default     = "../../../../../web_app"
-  type        = string
-  description = "Path where web assets are located"
+variable "tags" {
+  default = {
+    Contact = "me@davidjeddy.com"
+    Name    = "dje-isitisekai-prd-la8o-origin"
+    Owner   = "Eddy Enterprises"
+    Version = "0.3.0"
+  }
+  description = "(required) Default tags"
+  type        = map(any)
 }
