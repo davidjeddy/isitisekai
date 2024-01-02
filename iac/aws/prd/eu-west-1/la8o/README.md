@@ -18,7 +18,7 @@ No providers.
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_this"></a> [this](#module\_this) | davidjeddy/static-website/aws | 0.0.1 |
+| <a name="module_this"></a> [this](#module\_this) | davidjeddy/static-website/aws | 0.0.2 |
 
 ## Resources
 

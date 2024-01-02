@@ -1,6 +1,6 @@
 module "this" {
   source  = "davidjeddy/static-website/aws"
-  version = "0.0.1"
+  version = "0.0.2"
 
   # DNS
 
@@ -15,6 +15,9 @@ module "this" {
   region        = var.region
   stage         = var.stage
   tags          = var.tags
+
+  # DNSSEC
+  enabled_dnssec = false
 
   # Providers
 

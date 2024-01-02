@@ -2,23 +2,19 @@
 <html>
 
 <head>
+    <!-- meta -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="./styles/reset.css">
-    <link rel="stylesheet" href="./styles/iii.css">
-    <link rel="stylesheet" href="./styles/card_flip.css">
-    <script src="./javascripts/animejs.min.js"></script>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS712JHMXF"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
 
-        function gtag() {
-            window.dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
+    <!-- favicon -->
+    <link rel="shortcut icon" href="./index_files/favicon.ico">
 
-        gtag('config', 'G-RS712JHMXF');
-    </script>
+    <!-- style -->
+    <link rel="stylesheet" href="./index_files/reset.css">
+    <link rel="stylesheet" href="./index_files/iii.css">
+    <link rel="stylesheet" href="./index_files/card_flip.css">
+    
+    <!-- script -->
+    <script src="./index_files/animejs.min.js"></script>
 </head>
 
 <body>
@@ -45,7 +41,7 @@
             var number = Math.floor(Math.random() * 10);
             console.log('number', number);
 
-            document.body.style.backgroundImage = "url('./images/" + number + ".jpg')";
+            document.body.style.backgroundImage = "url('./index_files/" + number + ".jpg')";
             document.body.style.backgroundSize = "cover";
             document.body.style.backgroundPosition = "center";
             document.body.style.margin = "0";
@@ -62,16 +58,16 @@
         }
 
         preload(
-            "./images/0.jpg",
-            "./images/1.jpg",
-            "./images/2.jpg",
-            "./images/3.jpg",
-            "./images/4.jpg",
-            "./images/5.jpg",
-            "./images/6.jpg",
-            "./images/7.jpg",
-            "./images/8.jpg",
-            "./images/9.jpg"
+            "./index_files/0.jpg",
+            "./index_files/1.jpg",
+            "./index_files/2.jpg",
+            "./index_files/3.jpg",
+            "./index_files/4.jpg",
+            "./index_files/5.jpg",
+            "./index_files/6.jpg",
+            "./index_files/7.jpg",
+            "./index_files/8.jpg",
+            "./index_files/9.jpg"
         )
 
         window.addEventListener('DOMContentLoaded', (event) => {

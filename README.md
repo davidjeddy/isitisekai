@@ -79,7 +79,6 @@ Upcoming planned project changes and feature adds.
 - [Terraform Cloud](https://cloud.hashicorp.com/products/terraform)
 - [Terraform](https://www.terraform.io/) >=1.1.6
 - [Terragrunt](https://terragrunt.gruntwork.io/) >=0.36
-- [tfsec](https://github.com/aquasecurity/tfsec)
 - [k6 open source](https://k6.io/open-source/)
 
 ## Runbook

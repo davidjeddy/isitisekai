@@ -1,5 +1,20 @@
 # Changelog
 
+## [0.4.0] - 2024-01-02
+
+### ADDED
+
+- Shared module for static website hosting
+
+### UPDATED
+
+- project to current tooling and patterns
+- website asset locationgi
+
+### REMOVED
+
+- in-place IAC resource configurations
+
 ## [0.3.0] - 2022-08-11
 
 - Updated project to current tooling and patterns

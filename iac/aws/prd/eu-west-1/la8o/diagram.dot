@@ -2,59 +2,6 @@ digraph {
 	compound = "true"
 	newrank = "true"
 	subgraph "root" {
-		"[root] aws_route53_zone.this (orphan)" [label = "aws_route53_zone.this", shape = "box"]
-		"[root] aws_s3_bucket_object.image_ico[\"favicon.ico\"] (orphan)" [label = "aws_s3_bucket_object.image_ico", shape = "box"]
-		"[root] aws_s3_bucket_object.images_jpg[\"0.jpg\"] (orphan)" [label = "aws_s3_bucket_object.images_jpg", shape = "box"]
-		"[root] aws_s3_bucket_object.images_jpg[\"1.jpg\"] (orphan)" [label = "aws_s3_bucket_object.images_jpg", shape = "box"]
-		"[root] aws_s3_bucket_object.images_jpg[\"2.jpg\"] (orphan)" [label = "aws_s3_bucket_object.images_jpg", shape = "box"]
-		"[root] aws_s3_bucket_object.images_jpg[\"3.jpg\"] (orphan)" [label = "aws_s3_bucket_object.images_jpg", shape = "box"]
-		"[root] aws_s3_bucket_object.images_jpg[\"4.jpg\"] (orphan)" [label = "aws_s3_bucket_object.images_jpg", shape = "box"]
-		"[root] aws_s3_bucket_object.images_jpg[\"5.jpg\"] (orphan)" [label = "aws_s3_bucket_object.images_jpg", shape = "box"]
-		"[root] aws_s3_bucket_object.images_jpg[\"6.jpg\"] (orphan)" [label = "aws_s3_bucket_object.images_jpg", shape = "box"]
-		"[root] aws_s3_bucket_object.images_jpg[\"7.jpg\"] (orphan)" [label = "aws_s3_bucket_object.images_jpg", shape = "box"]
-		"[root] aws_s3_bucket_object.images_jpg[\"8.jpg\"] (orphan)" [label = "aws_s3_bucket_object.images_jpg", shape = "box"]
-		"[root] aws_s3_bucket_object.images_jpg[\"9.jpg\"] (orphan)" [label = "aws_s3_bucket_object.images_jpg", shape = "box"]
-		"[root] aws_s3_bucket_object.javascripts[\"animejs.min.js\"] (orphan)" [label = "aws_s3_bucket_object.javascripts", shape = "box"]
-		"[root] aws_s3_bucket_object.styles_css[\"card_flip.css\"] (orphan)" [label = "aws_s3_bucket_object.styles_css", shape = "box"]
-		"[root] aws_s3_bucket_object.styles_css[\"iii.css\"] (orphan)" [label = "aws_s3_bucket_object.styles_css", shape = "box"]
-		"[root] aws_s3_bucket_object.styles_css[\"reset.css\"] (orphan)" [label = "aws_s3_bucket_object.styles_css", shape = "box"]
-		"[root] aws_s3_bucket_object.text_html[\"index.html\"] (orphan)" [label = "aws_s3_bucket_object.text_html", shape = "box"]
-		"[root] module.acm_request_certificate.aws_acm_certificate.default[0] (orphan)" [label = "module.acm_request_certificate.aws_acm_certificate.default", shape = "box"]
-		"[root] module.acm_request_certificate.aws_route53_record.default[\"*.isitisekai.com\"] (orphan)" [label = "module.acm_request_certificate.aws_route53_record.default", shape = "box"]
-		"[root] module.acm_request_certificate.aws_route53_record.default[\"isitisekai.com\"] (orphan)" [label = "module.acm_request_certificate.aws_route53_record.default", shape = "box"]
-		"[root] module.acm_request_certificate.data.aws_route53_zone.default[\"isitisekai.com\"] (orphan)" [label = "module.acm_request_certificate.data.aws_route53_zone.default", shape = "box"]
-		"[root] module.cdn.aws_cloudfront_distribution.default[0] (orphan)" [label = "module.cdn.aws_cloudfront_distribution.default", shape = "box"]
-		"[root] module.cdn.aws_cloudfront_origin_access_identity.default[0] (orphan)" [label = "module.cdn.aws_cloudfront_origin_access_identity.default", shape = "box"]
-		"[root] module.cdn.aws_s3_bucket.origin[0] (orphan)" [label = "module.cdn.aws_s3_bucket.origin", shape = "box"]
-		"[root] module.cdn.aws_s3_bucket_ownership_controls.origin[0] (orphan)" [label = "module.cdn.aws_s3_bucket_ownership_controls.origin", shape = "box"]
-		"[root] module.cdn.aws_s3_bucket_policy.default[0] (orphan)" [label = "module.cdn.aws_s3_bucket_policy.default", shape = "box"]
-		"[root] module.cdn.aws_s3_bucket_public_access_block.origin[0] (orphan)" [label = "module.cdn.aws_s3_bucket_public_access_block.origin", shape = "box"]
-		"[root] module.cdn.data.aws_iam_policy_document.combined[0] (orphan)" [label = "module.cdn.data.aws_iam_policy_document.combined", shape = "box"]
-		"[root] module.cdn.data.aws_iam_policy_document.s3_origin[0] (orphan)" [label = "module.cdn.data.aws_iam_policy_document.s3_origin", shape = "box"]
-		"[root] module.cdn.data.aws_iam_policy_document.s3_ssl_only[0] (orphan)" [label = "module.cdn.data.aws_iam_policy_document.s3_ssl_only", shape = "box"]
-		"[root] module.cdn.data.aws_partition.current[0] (orphan)" [label = "module.cdn.data.aws_partition.current", shape = "box"]
-		"[root] module.cdn.data.aws_region.current[0] (orphan)" [label = "module.cdn.data.aws_region.current", shape = "box"]
-		"[root] module.cdn.module.dns.aws_route53_record.default[\"*.isitisekai.com\"] (orphan)" [label = "module.cdn.module.dns.aws_route53_record.default", shape = "box"]
-		"[root] module.cdn.module.dns.aws_route53_record.default[\"isitisekai.com\"] (orphan)" [label = "module.cdn.module.dns.aws_route53_record.default", shape = "box"]
-		"[root] module.cdn.module.dns.aws_route53_record.ipv6[\"*.isitisekai.com\"] (orphan)" [label = "module.cdn.module.dns.aws_route53_record.ipv6", shape = "box"]
-		"[root] module.cdn.module.dns.aws_route53_record.ipv6[\"isitisekai.com\"] (orphan)" [label = "module.cdn.module.dns.aws_route53_record.ipv6", shape = "box"]
-		"[root] module.cdn.module.dns.data.aws_route53_zone.default[0] (orphan)" [label = "module.cdn.module.dns.data.aws_route53_zone.default", shape = "box"]
-		"[root] module.cdn.module.logs.data.aws_caller_identity.current[0] (orphan)" [label = "module.cdn.module.logs.data.aws_caller_identity.current", shape = "box"]
-		"[root] module.cdn.module.logs.data.aws_partition.current[0] (orphan)" [label = "module.cdn.module.logs.data.aws_partition.current", shape = "box"]
-		"[root] module.cdn.module.logs.module.aws_s3_bucket.aws_s3_bucket.default[0] (orphan)" [label = "module.cdn.module.logs.module.aws_s3_bucket.aws_s3_bucket.default", shape = "box"]
-		"[root] module.cdn.module.logs.module.aws_s3_bucket.aws_s3_bucket_acl.default[0] (orphan)" [label = "module.cdn.module.logs.module.aws_s3_bucket.aws_s3_bucket_acl.default", shape = "box"]
-		"[root] module.cdn.module.logs.module.aws_s3_bucket.aws_s3_bucket_lifecycle_configuration.default[0] (orphan)" [label = "module.cdn.module.logs.module.aws_s3_bucket.aws_s3_bucket_lifecycle_configuration.default", shape = "box"]
-		"[root] module.cdn.module.logs.module.aws_s3_bucket.aws_s3_bucket_ownership_controls.default[0] (orphan)" [label = "module.cdn.module.logs.module.aws_s3_bucket.aws_s3_bucket_ownership_controls.default", shape = "box"]
-		"[root] module.cdn.module.logs.module.aws_s3_bucket.aws_s3_bucket_policy.default[0] (orphan)" [label = "module.cdn.module.logs.module.aws_s3_bucket.aws_s3_bucket_policy.default", shape = "box"]
-		"[root] module.cdn.module.logs.module.aws_s3_bucket.aws_s3_bucket_public_access_block.default[0] (orphan)" [label = "module.cdn.module.logs.module.aws_s3_bucket.aws_s3_bucket_public_access_block.default", shape = "box"]
-		"[root] module.cdn.module.logs.module.aws_s3_bucket.aws_s3_bucket_server_side_encryption_configuration.default[0] (orphan)" [label = "module.cdn.module.logs.module.aws_s3_bucket.aws_s3_bucket_server_side_encryption_configuration.default", shape = "box"]
-		"[root] module.cdn.module.logs.module.aws_s3_bucket.aws_s3_bucket_versioning.default[0] (orphan)" [label = "module.cdn.module.logs.module.aws_s3_bucket.aws_s3_bucket_versioning.default", shape = "box"]
-		"[root] module.cdn.module.logs.module.aws_s3_bucket.data.aws_canonical_user_id.default[0] (orphan)" [label = "module.cdn.module.logs.module.aws_s3_bucket.data.aws_canonical_user_id.default", shape = "box"]
-		"[root] module.cdn.module.logs.module.aws_s3_bucket.data.aws_iam_policy_document.aggregated_policy[0] (orphan)" [label = "module.cdn.module.logs.module.aws_s3_bucket.data.aws_iam_policy_document.aggregated_policy", shape = "box"]
-		"[root] module.cdn.module.logs.module.aws_s3_bucket.data.aws_iam_policy_document.bucket_policy[0] (orphan)" [label = "module.cdn.module.logs.module.aws_s3_bucket.data.aws_iam_policy_document.bucket_policy", shape = "box"]
-		"[root] module.cdn.module.logs.module.aws_s3_bucket.data.aws_partition.current[0] (orphan)" [label = "module.cdn.module.logs.module.aws_s3_bucket.data.aws_partition.current", shape = "box"]
-		"[root] module.cdn.module.logs.module.aws_s3_bucket.time_sleep.wait_for_aws_s3_bucket_settings[0] (orphan)" [label = "module.cdn.module.logs.module.aws_s3_bucket.time_sleep.wait_for_aws_s3_bucket_settings", shape = "box"]
-		"[root] module.cdn.time_sleep.wait_for_aws_s3_bucket_settings[0] (orphan)" [label = "module.cdn.time_sleep.wait_for_aws_s3_bucket_settings", shape = "box"]
 		"[root] module.this.aws_kms_key.route_53_dnssec (expand)" [label = "module.this.aws_kms_key.route_53_dnssec", shape = "box"]
 		"[root] module.this.aws_route53_hosted_zone_dnssec.this (expand)" [label = "module.this.aws_route53_hosted_zone_dnssec.this", shape = "box"]
 		"[root] module.this.aws_route53_key_signing_key.this (expand)" [label = "module.this.aws_route53_key_signing_key.this", shape = "box"]
@@ -140,7 +87,6 @@ digraph {
 		"[root] module.this.module.route53_query_logging.data.aws_iam_policy_document.main (expand)" [label = "module.this.module.route53_query_logging.data.aws_iam_policy_document.main", shape = "box"]
 		"[root] module.this.module.route53_query_logging.data.aws_route53_zone.main (expand)" [label = "module.this.module.route53_query_logging.data.aws_route53_zone.main", shape = "box"]
 		"[root] provider[\"registry.terraform.io/cloudposse/awsutils\"]" [label = "provider[\"registry.terraform.io/cloudposse/awsutils\"]", shape = "diamond"]
-		"[root] provider[\"registry.terraform.io/hashicorp/aws\"]" [label = "provider[\"registry.terraform.io/hashicorp/aws\"]", shape = "diamond"]
 		"[root] provider[\"registry.terraform.io/hashicorp/aws\"].us-east-1" [label = "provider[\"registry.terraform.io/hashicorp/aws\"].us-east-1", shape = "diamond"]
 		"[root] provider[\"registry.terraform.io/hashicorp/random\"]" [label = "provider[\"registry.terraform.io/hashicorp/random\"]", shape = "diamond"]
 		"[root] provider[\"registry.terraform.io/hashicorp/time\"]" [label = "provider[\"registry.terraform.io/hashicorp/time\"]", shape = "diamond"]
@@ -151,46 +97,6 @@ digraph {
 		"[root] var.region" [label = "var.region", shape = "note"]
 		"[root] var.stage" [label = "var.stage", shape = "note"]
 		"[root] var.tags" [label = "var.tags", shape = "note"]
-		"[root] aws_route53_zone.this (orphan)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
-		"[root] aws_s3_bucket_object.image_ico[\"favicon.ico\"] (orphan)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
-		"[root] aws_s3_bucket_object.images_jpg[\"0.jpg\"] (orphan)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
-		"[root] aws_s3_bucket_object.images_jpg[\"1.jpg\"] (orphan)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
-		"[root] aws_s3_bucket_object.images_jpg[\"2.jpg\"] (orphan)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
-		"[root] aws_s3_bucket_object.images_jpg[\"3.jpg\"] (orphan)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
-		"[root] aws_s3_bucket_object.images_jpg[\"4.jpg\"] (orphan)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
-		"[root] aws_s3_bucket_object.images_jpg[\"5.jpg\"] (orphan)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
-		"[root] aws_s3_bucket_object.images_jpg[\"6.jpg\"] (orphan)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
-		"[root] aws_s3_bucket_object.images_jpg[\"7.jpg\"] (orphan)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
-		"[root] aws_s3_bucket_object.images_jpg[\"8.jpg\"] (orphan)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
-		"[root] aws_s3_bucket_object.images_jpg[\"9.jpg\"] (orphan)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
-		"[root] aws_s3_bucket_object.javascripts[\"animejs.min.js\"] (orphan)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
-		"[root] aws_s3_bucket_object.styles_css[\"card_flip.css\"] (orphan)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
-		"[root] aws_s3_bucket_object.styles_css[\"iii.css\"] (orphan)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
-		"[root] aws_s3_bucket_object.styles_css[\"reset.css\"] (orphan)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
-		"[root] aws_s3_bucket_object.text_html[\"index.html\"] (orphan)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
-		"[root] module.acm_request_certificate.aws_acm_certificate.default[0] (orphan)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
-		"[root] module.acm_request_certificate.aws_route53_record.default[\"*.isitisekai.com\"] (orphan)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
-		"[root] module.acm_request_certificate.aws_route53_record.default[\"isitisekai.com\"] (orphan)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
-		"[root] module.cdn.aws_cloudfront_distribution.default[0] (orphan)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
-		"[root] module.cdn.aws_cloudfront_origin_access_identity.default[0] (orphan)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
-		"[root] module.cdn.aws_s3_bucket.origin[0] (orphan)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
-		"[root] module.cdn.aws_s3_bucket_ownership_controls.origin[0] (orphan)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
-		"[root] module.cdn.aws_s3_bucket_policy.default[0] (orphan)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
-		"[root] module.cdn.aws_s3_bucket_public_access_block.origin[0] (orphan)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
-		"[root] module.cdn.module.dns.aws_route53_record.default[\"*.isitisekai.com\"] (orphan)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
-		"[root] module.cdn.module.dns.aws_route53_record.default[\"isitisekai.com\"] (orphan)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
-		"[root] module.cdn.module.dns.aws_route53_record.ipv6[\"*.isitisekai.com\"] (orphan)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
-		"[root] module.cdn.module.dns.aws_route53_record.ipv6[\"isitisekai.com\"] (orphan)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
-		"[root] module.cdn.module.logs.module.aws_s3_bucket.aws_s3_bucket.default[0] (orphan)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
-		"[root] module.cdn.module.logs.module.aws_s3_bucket.aws_s3_bucket_acl.default[0] (orphan)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
-		"[root] module.cdn.module.logs.module.aws_s3_bucket.aws_s3_bucket_lifecycle_configuration.default[0] (orphan)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
-		"[root] module.cdn.module.logs.module.aws_s3_bucket.aws_s3_bucket_ownership_controls.default[0] (orphan)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
-		"[root] module.cdn.module.logs.module.aws_s3_bucket.aws_s3_bucket_policy.default[0] (orphan)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
-		"[root] module.cdn.module.logs.module.aws_s3_bucket.aws_s3_bucket_public_access_block.default[0] (orphan)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
-		"[root] module.cdn.module.logs.module.aws_s3_bucket.aws_s3_bucket_server_side_encryption_configuration.default[0] (orphan)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
-		"[root] module.cdn.module.logs.module.aws_s3_bucket.aws_s3_bucket_versioning.default[0] (orphan)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
-		"[root] module.cdn.module.logs.module.aws_s3_bucket.time_sleep.wait_for_aws_s3_bucket_settings[0] (orphan)" -> "[root] provider[\"registry.terraform.io/hashicorp/time\"]"
-		"[root] module.cdn.time_sleep.wait_for_aws_s3_bucket_settings[0] (orphan)" -> "[root] provider[\"registry.terraform.io/hashicorp/time\"]"
 		"[root] module.this (close)" -> "[root] module.this.aws_route53_hosted_zone_dnssec.this (expand)"
 		"[root] module.this (close)" -> "[root] module.this.aws_s3_object.font_ttf (expand)"
 		"[root] module.this (close)" -> "[root] module.this.aws_s3_object.font_woff (expand)"
@@ -210,6 +116,7 @@ digraph {
 		"[root] module.this (close)" -> "[root] module.this.var.tags (expand)"
 		"[root] module.this.aws_kms_key.route_53_dnssec (expand)" -> "[root] module.this.data.aws_caller_identity.current (expand)"
 		"[root] module.this.aws_kms_key.route_53_dnssec (expand)" -> "[root] module.this.var.delete_timeout (expand)"
+		"[root] module.this.aws_kms_key.route_53_dnssec (expand)" -> "[root] module.this.var.enabled_dnssec (expand)"
 		"[root] module.this.aws_route53_hosted_zone_dnssec.this (expand)" -> "[root] module.this.aws_route53_key_signing_key.this (expand)"
 		"[root] module.this.aws_route53_key_signing_key.this (expand)" -> "[root] module.this.aws_kms_key.route_53_dnssec (expand)"
 		"[root] module.this.aws_route53_key_signing_key.this (expand)" -> "[root] module.this.aws_route53_zone.this (expand)"
@@ -2978,6 +2885,7 @@ digraph {
 		"[root] module.this.var.delimiter (expand)" -> "[root] module.this (expand)"
 		"[root] module.this.var.domain_name (expand)" -> "[root] module.this (expand)"
 		"[root] module.this.var.domain_name (expand)" -> "[root] var.name"
+		"[root] module.this.var.enabled_dnssec (expand)" -> "[root] module.this (expand)"
 		"[root] module.this.var.name (expand)" -> "[root] module.this (expand)"
 		"[root] module.this.var.name (expand)" -> "[root] var.name"
 		"[root] module.this.var.namespace (expand)" -> "[root] module.this (expand)"
@@ -2996,48 +2904,6 @@ digraph {
 		"[root] provider[\"registry.terraform.io/cloudposse/awsutils\"]" -> "[root] var.namespace"
 		"[root] provider[\"registry.terraform.io/cloudposse/awsutils\"]" -> "[root] var.region"
 		"[root] provider[\"registry.terraform.io/cloudposse/awsutils\"]" -> "[root] var.tags"
-		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_route53_zone.this (orphan)"
-		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_s3_bucket_object.image_ico[\"favicon.ico\"] (orphan)"
-		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_s3_bucket_object.images_jpg[\"0.jpg\"] (orphan)"
-		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_s3_bucket_object.images_jpg[\"1.jpg\"] (orphan)"
-		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_s3_bucket_object.images_jpg[\"2.jpg\"] (orphan)"
-		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_s3_bucket_object.images_jpg[\"3.jpg\"] (orphan)"
-		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_s3_bucket_object.images_jpg[\"4.jpg\"] (orphan)"
-		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_s3_bucket_object.images_jpg[\"5.jpg\"] (orphan)"
-		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_s3_bucket_object.images_jpg[\"6.jpg\"] (orphan)"
-		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_s3_bucket_object.images_jpg[\"7.jpg\"] (orphan)"
-		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_s3_bucket_object.images_jpg[\"8.jpg\"] (orphan)"
-		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_s3_bucket_object.images_jpg[\"9.jpg\"] (orphan)"
-		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_s3_bucket_object.javascripts[\"animejs.min.js\"] (orphan)"
-		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_s3_bucket_object.styles_css[\"card_flip.css\"] (orphan)"
-		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_s3_bucket_object.styles_css[\"iii.css\"] (orphan)"
-		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_s3_bucket_object.styles_css[\"reset.css\"] (orphan)"
-		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_s3_bucket_object.text_html[\"index.html\"] (orphan)"
-		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] module.acm_request_certificate.aws_acm_certificate.default[0] (orphan)"
-		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] module.acm_request_certificate.aws_route53_record.default[\"*.isitisekai.com\"] (orphan)"
-		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] module.acm_request_certificate.aws_route53_record.default[\"isitisekai.com\"] (orphan)"
-		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] module.cdn.aws_cloudfront_distribution.default[0] (orphan)"
-		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] module.cdn.aws_cloudfront_origin_access_identity.default[0] (orphan)"
-		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] module.cdn.aws_s3_bucket.origin[0] (orphan)"
-		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] module.cdn.aws_s3_bucket_ownership_controls.origin[0] (orphan)"
-		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] module.cdn.aws_s3_bucket_policy.default[0] (orphan)"
-		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] module.cdn.aws_s3_bucket_public_access_block.origin[0] (orphan)"
-		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] module.cdn.module.dns.aws_route53_record.default[\"*.isitisekai.com\"] (orphan)"
-		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] module.cdn.module.dns.aws_route53_record.default[\"isitisekai.com\"] (orphan)"
-		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] module.cdn.module.dns.aws_route53_record.ipv6[\"*.isitisekai.com\"] (orphan)"
-		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] module.cdn.module.dns.aws_route53_record.ipv6[\"isitisekai.com\"] (orphan)"
-		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] module.cdn.module.logs.module.aws_s3_bucket.aws_s3_bucket.default[0] (orphan)"
-		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] module.cdn.module.logs.module.aws_s3_bucket.aws_s3_bucket_acl.default[0] (orphan)"
-		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] module.cdn.module.logs.module.aws_s3_bucket.aws_s3_bucket_lifecycle_configuration.default[0] (orphan)"
-		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] module.cdn.module.logs.module.aws_s3_bucket.aws_s3_bucket_ownership_controls.default[0] (orphan)"
-		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] module.cdn.module.logs.module.aws_s3_bucket.aws_s3_bucket_policy.default[0] (orphan)"
-		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] module.cdn.module.logs.module.aws_s3_bucket.aws_s3_bucket_public_access_block.default[0] (orphan)"
-		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] module.cdn.module.logs.module.aws_s3_bucket.aws_s3_bucket_server_side_encryption_configuration.default[0] (orphan)"
-		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] module.cdn.module.logs.module.aws_s3_bucket.aws_s3_bucket_versioning.default[0] (orphan)"
-		"[root] provider[\"registry.terraform.io/hashicorp/aws\"]" -> "[root] var.name"
-		"[root] provider[\"registry.terraform.io/hashicorp/aws\"]" -> "[root] var.namespace"
-		"[root] provider[\"registry.terraform.io/hashicorp/aws\"]" -> "[root] var.region"
-		"[root] provider[\"registry.terraform.io/hashicorp/aws\"]" -> "[root] var.tags"
 		"[root] provider[\"registry.terraform.io/hashicorp/aws\"].us-east-1 (close)" -> "[root] module.this.aws_route53_hosted_zone_dnssec.this (expand)"
 		"[root] provider[\"registry.terraform.io/hashicorp/aws\"].us-east-1 (close)" -> "[root] module.this.aws_s3_object.font_ttf (expand)"
 		"[root] provider[\"registry.terraform.io/hashicorp/aws\"].us-east-1 (close)" -> "[root] module.this.aws_s3_object.font_woff (expand)"
@@ -3076,31 +2942,10 @@ digraph {
 		"[root] provider[\"registry.terraform.io/hashicorp/aws\"].us-east-1" -> "[root] var.region"
 		"[root] provider[\"registry.terraform.io/hashicorp/aws\"].us-east-1" -> "[root] var.tags"
 		"[root] provider[\"registry.terraform.io/hashicorp/random\"] (close)" -> "[root] module.this.module.cloudfront.random_password.referer (expand)"
-		"[root] provider[\"registry.terraform.io/hashicorp/time\"] (close)" -> "[root] module.cdn.module.logs.module.aws_s3_bucket.time_sleep.wait_for_aws_s3_bucket_settings[0] (orphan)"
-		"[root] provider[\"registry.terraform.io/hashicorp/time\"] (close)" -> "[root] module.cdn.time_sleep.wait_for_aws_s3_bucket_settings[0] (orphan)"
 		"[root] provider[\"registry.terraform.io/hashicorp/time\"] (close)" -> "[root] module.this.module.cloudfront.module.logs.module.aws_s3_bucket.time_sleep.wait_for_aws_s3_bucket_settings (expand)"
 		"[root] provider[\"registry.terraform.io/hashicorp/time\"] (close)" -> "[root] module.this.module.cloudfront.time_sleep.wait_for_aws_s3_bucket_settings (expand)"
-		"[root] root" -> "[root] module.acm_request_certificate (close)"
-		"[root] root" -> "[root] module.acm_request_certificate.data.aws_route53_zone.default[\"isitisekai.com\"] (orphan)"
-		"[root] root" -> "[root] module.cdn (close)"
-		"[root] root" -> "[root] module.cdn.data.aws_iam_policy_document.combined[0] (orphan)"
-		"[root] root" -> "[root] module.cdn.data.aws_iam_policy_document.s3_origin[0] (orphan)"
-		"[root] root" -> "[root] module.cdn.data.aws_iam_policy_document.s3_ssl_only[0] (orphan)"
-		"[root] root" -> "[root] module.cdn.data.aws_partition.current[0] (orphan)"
-		"[root] root" -> "[root] module.cdn.data.aws_region.current[0] (orphan)"
-		"[root] root" -> "[root] module.cdn.module.dns (close)"
-		"[root] root" -> "[root] module.cdn.module.dns.data.aws_route53_zone.default[0] (orphan)"
-		"[root] root" -> "[root] module.cdn.module.logs (close)"
-		"[root] root" -> "[root] module.cdn.module.logs.data.aws_caller_identity.current[0] (orphan)"
-		"[root] root" -> "[root] module.cdn.module.logs.data.aws_partition.current[0] (orphan)"
-		"[root] root" -> "[root] module.cdn.module.logs.module.aws_s3_bucket (close)"
-		"[root] root" -> "[root] module.cdn.module.logs.module.aws_s3_bucket.data.aws_canonical_user_id.default[0] (orphan)"
-		"[root] root" -> "[root] module.cdn.module.logs.module.aws_s3_bucket.data.aws_iam_policy_document.aggregated_policy[0] (orphan)"
-		"[root] root" -> "[root] module.cdn.module.logs.module.aws_s3_bucket.data.aws_iam_policy_document.bucket_policy[0] (orphan)"
-		"[root] root" -> "[root] module.cdn.module.logs.module.aws_s3_bucket.data.aws_partition.current[0] (orphan)"
 		"[root] root" -> "[root] module.this (close)"
 		"[root] root" -> "[root] provider[\"registry.terraform.io/cloudposse/awsutils\"] (close)"
-		"[root] root" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)"
 		"[root] root" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"].us-east-1 (close)"
 		"[root] root" -> "[root] provider[\"registry.terraform.io/hashicorp/random\"] (close)"
 		"[root] root" -> "[root] provider[\"registry.terraform.io/hashicorp/time\"] (close)"
