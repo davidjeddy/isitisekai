@@ -1,0 +1,4 @@
+# https://runterrascan.io/docs/_print/#pg-07a53d0ea8f57b62a06a9235598d5c55
+[rules]
+    scan-rules = []
+    skip-rules = []
