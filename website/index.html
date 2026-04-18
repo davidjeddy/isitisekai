@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="./index_files/favicon.ico">
+
+    <!-- style -->
+    <link rel="stylesheet" href="./index_files/reset.css">
+    <link rel="stylesheet" href="./index_files/iii.css">
+    <link rel="stylesheet" href="./index_files/card_flip.css">
+    
+    <!-- script -->
+    <script src="./index_files/animejs.min.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="card-container">
+            <div class="card">
+                <div class="front">
+                    <h1>Is It Isekai?</h1>&nbsp;&nbsp;&nbsp;
+                    <input type="text" id="searchbox" placeholder="Search anime title"></input>&nbsp;&nbsp;&nbsp;
+                    <button id="check">Find out!</button>
+                </div>
+                <div class="back">
+                    <h1>Of course it is, weeb!</h1>&nbsp;&nbsp;&nbsp;
+                    <button id="reset">Try again</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function background() {
+            console.log('background() called');
+            var number = Math.floor(Math.random() * 10);
+            console.log('number', number);
+
+            document.body.style.backgroundImage = "url('./index_files/" + number + ".jpg')";
+            document.body.style.backgroundSize = "cover";
+            document.body.style.backgroundPosition = "center";
+            document.body.style.margin = "0";
+        }
+
+        function preload() {
+            var images = [];
+
+            for (var i = 0; i < arguments.length; i++) {
+                console.log('preloading background image', i);
+                images[i] = new Image();
+                images[i].src = preload.arguments[i];
+            }
+        }
+
+        preload(
+            "./index_files/0.jpg",
+            "./index_files/1.jpg",
+            "./index_files/2.jpg",
+            "./index_files/3.jpg",
+            "./index_files/4.jpg",
+            "./index_files/5.jpg",
+            "./index_files/6.jpg",
+            "./index_files/7.jpg",
+            "./index_files/8.jpg",
+            "./index_files/9.jpg"
+        )
+
+        window.addEventListener('DOMContentLoaded', (event) => {
+            console.log('DOM fully loaded and parsed');
+            background();
+
+            var check = document.querySelector("#check");
+            var reset = document.querySelector("#reset");
+
+            var playing = false;
+
+            check.addEventListener('click', function() {
+                if (playing)
+                    return;
+
+                playing = true;
+                anime({
+                    targets: document.querySelector(".card"),
+                    scale: [{
+                        value: 1
+                    }, {
+                        value: 1.4
+                    }, {
+                        value: 1,
+                        delay: 250
+                    }],
+                    rotateY: {
+                        value: '+=180',
+                        delay: 200
+                    },
+                    easing: 'easeInOutSine',
+                    duration: 400,
+                    complete: function(anim) {
+                        playing = false;
+                        background();
+                    }
+                });
+            });
+
+            reset.addEventListener('click', function() {
+                if (playing)
+                    return;
+
+                playing = true;
+                anime({
+                    targets: document.querySelector(".card"),
+                    scale: [{
+                        value: 1
+                    }, {
+                        value: 1.4
+                    }, {
+                        value: 1,
+                        delay: 250
+                    }],
+                    rotateY: {
+                        value: '+=180',
+                        delay: 200
+                    },
+                    easing: 'easeInOutSine',
+                    duration: 400,
+                    complete: function(anim) {
+                        playing = false;
+                        background();
+                    }
+                });
+
+                document.getElementById("searchbox").value = ''
+            });
+        });
+    </script>
+</body>
+
+</html>
